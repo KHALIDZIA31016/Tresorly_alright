@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tresorly/Editvault/editvault.dart';
 import 'package:tresorly/authentication/authentication.dart';
 import 'package:tresorly/menu/menu.dart';
+import 'package:tresorly/newvault/newvault.dart';
 import 'package:tresorly/test.dart';
 import 'package:tresorly/utils/my_size.dart';
 import 'package:tresorly/views/accessibility_screen/accessibility_screen.dart';
@@ -15,6 +18,7 @@ import 'package:tresorly/views/forgot_password/otp_verification.dart';
 import 'package:tresorly/views/forgot_password/update_password.dart';
 import 'package:tresorly/views/getting_started/getting_started.dart';
 import 'package:tresorly/views/home_screen/home_screen.dart';
+import 'package:tresorly/views/home_screen/netflix_screen.dart';
 import 'package:tresorly/views/language_selection/language_selection.dart';
 import 'package:tresorly/views/legal_regulatory/legal_regulatory.dart';
 import 'package:tresorly/views/notification_screen/notifiction_screen.dart';
@@ -48,7 +52,7 @@ class _MyAppState extends State<MyApp> {
 
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+        home: SubscriptionPlan(),
       ),
     );
   }

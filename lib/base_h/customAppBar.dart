@@ -14,16 +14,19 @@ class CustomAppBar extends StatelessWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
-      leading: Container(
-        height: MySize.size40,
-        width: MySize.size40,
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-          color: AppColors.whiteFF,
+      leading: Padding(
+        padding: const EdgeInsets.only(right: 10),
+        child: Container(
+          height: MySize.size24,
+          width: MySize.size24,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: AppColors.whiteFF,
+          ),
+          child:  Icon(icon, size: 20,),
         ),
-        child:  Icon(icon),
       ),
-      title:  Text(text,style: TextStyle(color: AppColors.darkBlue46,fontSize: MySize.size20,fontWeight: FontWeight.w600),),
+      title:  Text(text,style: TextStyle(color: AppColors.darkBlue46,fontSize: 20,fontWeight: FontWeight.w600, fontFamily: 'Outfit-Regular'),),
     );
   }
 }

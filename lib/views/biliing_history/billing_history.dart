@@ -40,8 +40,9 @@ class _BillingHistoryState extends State<BillingHistory> {
             padding: const EdgeInsets.only(left: 25, top: 20, bottom: 17),
             child: TextWidgetInterBold(
               title: 'History',
-              fontSize: 20,
+              fontSize: 22,
               color: const Color(0XFF1750BF),
+              FontFamily: 'Outfit-Regular',
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -55,18 +56,19 @@ class _BillingHistoryState extends State<BillingHistory> {
                       ),
                       trailing: const Text(
                         '- 24.50 CHF',
-                        style: TextStyle(fontSize: 12, color: Colors.red),
+                        style: TextStyle(fontSize: 14, color: Colors.red,   fontFamily: 'Outfit-Regular',
+                        ),
                       ),
-                      title: const Text('Yearly Subscription',  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500 ),),
+                      title: const Text('Yearly Subscription',  style: TextStyle(fontFamily: 'Outfit-Regular',fontSize: 18, fontWeight: FontWeight.w500 ),),
                       subtitle:  Row(
                         children: [
                           Image.asset(
-                            color: Color(0XFF292D32),
+                            color: Colors.black54,
                             AppConstants.calendar2,
                             scale: 3,
                           ),
                           5.wt,
-                          Text('12/2/2024'),
+                          Text('12/2/2024', style: TextStyle(fontSize: 10, color: Colors.black54, fontFamily: 'Outfit-Regular',),),
                           SizedBox(
                             width: 20,
                           ),
@@ -76,7 +78,7 @@ class _BillingHistoryState extends State<BillingHistory> {
                             scale: 3,
                           ),
                           5.wt,
-                          Text('07:21'),
+                          Text('07:21', style: TextStyle(fontSize: 11, color: Colors.black54, fontFamily: 'Outfit-Regular',),),
                         ],
                       ),
                     )),

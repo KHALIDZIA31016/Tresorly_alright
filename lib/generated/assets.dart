@@ -2,10 +2,22 @@
 class Assets {
   Assets._();
 
-  static const String assetsBackgroundSignInBg = 'assets/background/signIn_bg.png';
+  static const String assetsAssetsHAppLogo = 'assets/assets_h/appLogo.png';
+  static const String assetsBackgroundSign = 'assets/background/Sign.png';
+  static const String assetsBackgroundSplashBg = 'assets/background/splash_bg.png';
+  static const String assetsHAppLogo = 'assets/assets_h/appLogo.png';
   static const String assetsHImagesMessenger = 'assets/assets_h/images/messenger.png';
   static const String assetsHImagesNetflix = 'assets/assets_h/images/netflix.png';
-  static const String backgroundSignInBg = 'assets/background/signIn_bg.png';
+  static const String assetsIconsMesseng = 'assets/icons/messeng.png';
+  static const String assetsIconsNetflix = 'assets/icons/netflix.png';
+  static const String assetsMesg = 'assets/mesg.png';
+  static const String assetsNetf = 'assets/netf.png';
+  static const String assetsProf = 'assets/prof.png';
+  static const String backgroundIconsCopyBottom = 'assets/background/icons/copy_bottom.png';
+  static const String backgroundIconsGallery = 'assets/background/icons/gallery.png';
+  static const String backgroundIconsProfile = 'assets/background/icons/profile.png';
+  static const String backgroundSign = 'assets/background/Sign.png';
+  static const String backgroundSplashBg = 'assets/background/splash_bg.png';
   static const String fontsInterBlack = 'assets/fonts/Inter-Black.ttf';
   static const String fontsInterBold = 'assets/fonts/Inter-Bold.ttf';
   static const String fontsInterExtraBold = 'assets/fonts/Inter-ExtraBold.ttf';
@@ -15,15 +27,19 @@ class Assets {
   static const String fontsInterRegular = 'assets/fonts/Inter-Regular.ttf';
   static const String fontsInterSemiBold = 'assets/fonts/Inter-SemiBold.ttf';
   static const String fontsInterThin = 'assets/fonts/Inter-Thin.ttf';
+  static const String fontsOutfitBold = 'assets/fonts/Outfit-Bold.ttf';
+  static const String fontsOutfitRegular = 'assets/fonts/Outfit-Regular.ttf';
   static const String fontsPoppinsRegular = 'assets/fonts/Poppins-Regular.ttf';
   static const String iconsAlertIcon = 'assets/icons/alert_icon.png';
   static const String iconsCN = 'assets/icons/CN.png';
+  static const String iconsCopyBottom = 'assets/background/icons/copy_bottom.png';
   static const String iconsCustomization = 'assets/assets_h/icons/customization.png';
   static const String iconsData = 'assets/assets_h/icons/data.png';
   static const String iconsDrawerLines = 'assets/icons/drawer_lines.png';
   static const String iconsEdit = 'assets/assets_h/icons/edit.png';
   static const String iconsExport = 'assets/assets_h/icons/export.png';
   static const String iconsGB = 'assets/icons/GB.png';
+  static const String iconsGallery = 'assets/background/icons/gallery.png';
   static const String iconsGlobe = 'assets/assets_h/icons/globe.png';
   static const String iconsHelpCenter = 'assets/assets_h/icons/helpCenter.png';
   static const String iconsHistory = 'assets/assets_h/icons/history.png';
@@ -37,11 +53,15 @@ class Assets {
   static const String iconsLinkedin = 'assets/assets_h/icons/linkedin.png';
   static const String iconsLock = 'assets/assets_h/icons/lock.png';
   static const String iconsLogout = 'assets/assets_h/icons/logout.png';
+  static const String iconsMesseng = 'assets/icons/messeng.png';
+  static const String iconsMobApp = 'assets/icons/mob_app.png';
   static const String iconsMoney = 'assets/assets_h/icons/money.png';
+  static const String iconsNetflix = 'assets/icons/netflix.png';
   static const String iconsNotification = 'assets/assets_h/icons/notification.png';
   static const String iconsPK = 'assets/icons/PK.png';
   static const String iconsPS = 'assets/icons/PS.png';
   static const String iconsPayment = 'assets/assets_h/icons/payment.png';
+  static const String iconsProfile = 'assets/background/icons/profile.png';
   static const String iconsProfileDelete = 'assets/assets_h/icons/profile-delete.png';
   static const String iconsScan = 'assets/assets_h/icons/scan.png';
   static const String iconsSecuritySafe = 'assets/assets_h/icons/security-safe.png';
@@ -97,5 +117,7 @@ class Assets {
   static const String imagesUnlimitedPass = 'assets/images/unlimited_pass.png';
   static const String imagesUpArrow = 'assets/images/up_arrow.png';
   static const String imagesVulner = 'assets/images/vulner.png';
+  static const String tresorlyAssetsMesg = 'assets/mesg.png';
+  static const String tresorlyAssetsNetf = 'assets/netf.png';
 
 }

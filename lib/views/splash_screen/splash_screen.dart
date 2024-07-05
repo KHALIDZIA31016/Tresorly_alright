@@ -21,30 +21,21 @@ class SplashScreen extends StatelessWidget {
       );
     });
 
+
     return Scaffold(
+      backgroundColor: Color(0XFF00132D),
       body: Center(
         child: Container(
           width: double.infinity,
           height: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/assets_h/images/splashscreen.png'),
-              fit: BoxFit.cover,
+              image: AssetImage('assets/background/splash_bg.png'),
+              fit: BoxFit.fill
+              ,
             ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              AppConstants.appLogo,
-              SizedBox(height:MySize.size7,),
-              TextWidgetInterBold(
-                title: 'Your keys at the right place.',
-                color: AppColors.greyF7,
-                fontWeight: FontWeight.w400,
-                fontSize: MySize.size12,
-              ),
-            ],
-          ),
+
         ),
       ),
     );

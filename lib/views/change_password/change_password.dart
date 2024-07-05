@@ -12,6 +12,7 @@ class ChangePassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.backgroundF7,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(MySize.size72),
@@ -38,6 +39,7 @@ class ChangePassword extends StatelessWidget {
                   title:'Current Password',
                   fontSize: MySize.size14,
                   fontWeight: FontWeight.w400,
+                  FontFamily: 'Outfit-Regular',
                   color: AppColors.blue8F,
                 ),
                 SizedBox(height: MySize.size5,),
@@ -50,6 +52,7 @@ class ChangePassword extends StatelessWidget {
                   title:'New Password',
                   fontSize: MySize.size14,
                   fontWeight: FontWeight.w400,
+                  FontFamily: 'Outfit-Regular',
                   color: AppColors.blue8F,
                 ),
                 SizedBox(height: MySize.size5,),
@@ -61,6 +64,7 @@ class ChangePassword extends StatelessWidget {
                 TextWidgetInterBold(
                   title:'Confirm Password',
                   fontSize: MySize.size14,
+                  FontFamily: 'Outfit-Regular',
                   fontWeight: FontWeight.w400,
                   color: AppColors.blue8F,
                 ),
@@ -78,15 +82,15 @@ class ChangePassword extends StatelessWidget {
                     height: MySize.size52,
                     width: MySize.scaleFactorWidth*300,
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xff165290) ,Color(0xff168DBC) ],
+                      gradient: LinearGradient(
+                        colors: [Color(0xff165290) ,Color(0xff168DBC).withOpacity(.6) ],
                         begin: Alignment(0, 7),
                         end: Alignment(2, 0),
 
                       ),
                       borderRadius: BorderRadius.circular(MySize.size16),
                     ),
-                    child: const Center(child: Text('Save Changes',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: AppColors.whiteFF),)),
+                    child: const Center(child: Text('Save Changes',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: AppColors.whiteFF, fontFamily:  'Outfit-Regular',),)),
                   ),
                 ),
 

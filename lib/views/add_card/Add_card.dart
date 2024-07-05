@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tresorly/base/text_widget.dart';
 import 'package:tresorly/utils/app_constants/app_constant.dart';
+import 'package:tresorly/views/payment_method/payment_screen.dart';
 
 import '../../base_h/customAppBar.dart';
 import '../../utils/app_colors/app_colors.dart';
@@ -18,9 +19,15 @@ class AddCardScreen extends StatefulWidget {
 }
 
 class _AddCardScreenState extends State<AddCardScreen> {
-  bool tap = true;
-  bool tap1 = true;
-  bool tap2 = true;
+
+  List<String> titleContainer = ['Credit Card', 'Debit Card', 'Pay Pal'];
+  List<String> containerImages= [
+    AppConstants.credit_cardIcon,
+    AppConstants.debit_cardIcon,
+    AppConstants.paypalIcon
+  ];
+
+  int selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -43,213 +50,254 @@ class _AddCardScreenState extends State<AddCardScreen> {
 
 
       backgroundColor: const Color(0XFFF0F4F7),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 37, right: 38, top: 15),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TextWidgetInterBold(
-                title: 'Payment Method', fontSize: 20,
-                color: const Color(0XFF1750BF),fontWeight: FontWeight.w600,),
-              SizedBox(height: 10,),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 37,
+              top: 25,
+              bottom: 10,
+            ),
+            child: TextWidgetInterBold(
+              title: 'Payment  Method', fontSize: 20,
+              color: AppColors.blue8F,fontWeight: FontWeight.w500,),
+          ),
+          SizedBox(height: 10,),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(3, (index) {
+                bool isSelected = index == selectedIndex;
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedIndex = index;
+                    });
+                  },
+                  child: Column(
+                    // mainAxisAlignment: MainAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 37),
+                        child: Container(
+                          height: 124,
+                          width: 110,
+                          decoration: BoxDecoration(
+                            color: isSelected ? Color(0XFF17508F) : AppColors.whiteColor,
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                containerImages[index],
+                                height: 50,
+                                width: 75,
+                                color: isSelected ? AppColors.whiteColor : Color(0XFF17508F),
+                              ),
+                              TextWidgetInterRegular(
+                                title: titleContainer[index],
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                                color: isSelected ? AppColors.whiteColor : Color(0XFF17508F),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 15),
+                      Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Container(
+                            height: 28,
+                            width: 28,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.fromBorderSide(BorderSide(color: AppColors.balck, width: 1)),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          Container(
+                            height: 12,
+                            width: 12,
+                            decoration: BoxDecoration(
+                              color: isSelected ?  Color(0XFF505050) : Colors.transparent,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ),
+          ),
+          SizedBox(height: 25,),
+          Padding(
+            padding: const EdgeInsets.only(left: 37),
+            child: Row(
+              children: [
+                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    InkWell(
-                      onTap: (){
-                        setState(() {
-                          tap = ! tap;
-                        });
-                      },
-                      child: Container(
-                        height: 110, width: 124,
-                        decoration: BoxDecoration(
-                          color: tap ? Color(0XFF17508F) : AppColors.whiteColor,
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset(AppConstants.debit_cardIcon, height: 50, width: 75, color: tap ? AppColors.whiteColor :  Color(0XFF17508F),),
-                            TextWidgetInterRegular(title: 'Credit Card', fontSize: 12, fontWeight: FontWeight.w500, color: tap ? AppColors.whiteColor :  Color(0XFF17508F))
-                          ],
-                        ),
+                    TextWidgetInterMedium(title: 'Name on card', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
+                    SizedBox(height: 16,),
+                    Container(
+                      height: 44, width: 200,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0XFFD0D5DD)),
+                          borderRadius: BorderRadius.circular(8),
+                        color: Colors.white
                       ),
+                      child: Center(child: Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextWidgetInterMedium(title: 'Olivia Rhye', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828))),
+                      )),
                     ),
-                    const SizedBox(width: 15,),
-                    InkWell(
-                      onTap: (){
-                        setState(() {
-                          tap1 = ! tap1;
-                        });
-                      },
-                      child: Container(
-                        height: 110, width: 124,
-                        decoration: BoxDecoration(
-                          color: tap1 ? Color(0XFF17508F) : AppColors.whiteColor,
-                          borderRadius: const BorderRadius.all(Radius.circular(20)),
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset(AppConstants.credit_cardIcon, height: 50, width: 75,color: tap1 ? AppColors.whiteColor :  Color(0XFF17508F),),
-                            TextWidgetInterRegular(title: 'Debit Card', fontSize: 12, fontWeight: FontWeight.w500,
-                                color: tap1 ? AppColors.whiteColor :  Color(0XFF17508F))
-                          ],
-                        ),
+                  ],
+                ),
+                SizedBox(width: 10,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextWidgetInterMedium(title: 'Expiry', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
+                    SizedBox(height: 16,),
+                    Container(
+                      height: 44, width: 112,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0XFFD0D5DD)),
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.white
                       ),
-                    ),
+                      child: Center(
 
-
-
-
-
-
-                    const SizedBox(width: 15,),
-                    InkWell(
-                      onTap: (){
-                        setState(() {
-                          tap2 = ! tap2;
-                        });
-                      },
-                      child: Container(
-                        height: 110, width: 124,
-                        decoration: BoxDecoration(
-                          color: tap2 ? Color(0XFF17508F) : AppColors.whiteColor,
-                          borderRadius: const BorderRadius.all(Radius.circular(20)),
+                        child: RichText(text: TextSpan(text: '06 ',
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828)
                         ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Image.asset(AppConstants.paypalIcon, height: 50, width: 75,color: tap2 ? AppColors.whiteColor :  Color(0XFF17508F),),
-                            TextWidgetInterRegular(
-                                title: 'Pay pal', fontSize: 12, fontWeight: FontWeight.w500, color: tap2 ? AppColors.whiteColor :  Color(0XFF17508F))
+                            TextSpan(text: '/ ',style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFFD0D5DD)
+                            ), ),
+                            TextSpan(text: '2024',style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828)
+                            ), ),
+                          ]
+                        )),
+                          // child: TextWidgetInterMedium(title: '06 / 2024', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828))
+                        ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 16,),
+          Padding(
+            padding: const EdgeInsets.only(left: 37),
+            child: Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextWidgetInterMedium(title: 'Card number', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
+                    SizedBox(height: 16,),
+                    Container(
+                      height: 44, width: 200,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0XFFD0D5DD)),
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.white
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: Row(
+                          children: [
+                            Image.asset(AppConstants.master_cardIcon, scale: 2.5,),
+                            Center(child: TextWidgetInterMedium(title: '1234 1234 1234 1234', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828))),
                           ],
                         ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              SizedBox(height: 16,),
-              Row(
-                children: [
-                   Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextWidgetInterMedium(title: 'Name on Card', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
-                      SizedBox(height: 16,),
-                      Container(
-                        height: 44, width: 200,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0XFFD0D5DD)),
-                            borderRadius: BorderRadius.circular(8)
-                        ),
-                        child: Center(child: Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: TextWidgetInterMedium(title: 'Olivia Rhye', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828))),
-                        )),
+                SizedBox(width: 8,),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TextWidgetInterMedium(title: 'CVV', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
+                    SizedBox(height: 16,),
+                   Container(
+                      height: 44, width: 120,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0XFFD0D5DD)),
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.white
                       ),
-                    ],
-                  ),
-                  SizedBox(width: 10,),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextWidgetInterMedium(title: 'Expiry', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
-                      SizedBox(height: 16,),
-                      Container(
-                        height: 44, width: 112,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0XFFD0D5DD)),
-                            borderRadius: BorderRadius.circular(8)
-                        ),
-                        child: Center(child: TextWidgetInterMedium(title: '06 / 2024', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828))),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(height: 16,),
-              Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextWidgetInterMedium(title: 'Card Number', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
-                      SizedBox(height: 16,),
-                      Container(
-                        height: 44, width: 200,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0XFFD0D5DD)),
-                            borderRadius: BorderRadius.circular(8)
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 15),
-                          child: Row(
-                            children: [
-                              Image.asset(AppConstants.master_cardIcon, scale: 2.5,),
-                              Center(child: TextWidgetInterMedium(title: '1234 1234 1234 1234', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF101828))),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 8,),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextWidgetInterMedium(title: 'CVV', fontSize: 14, fontWeight: FontWeight.w500, color: Color(0XFF344054)),
-                      SizedBox(height: 16,),
-                     Container(
-                        height: 44, width: 120,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0XFFD0D5DD)),
-                            borderRadius: BorderRadius.circular(8)
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10),
-                          child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Image.asset(AppConstants.three_dotsIcon, scale: 3,)),
-                        )
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              SizedBox(height: 16,),
-           Row(
-             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-             children: [
-               Container(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Image.asset(AppConstants.three_dotsIcon, scale: 3,)),
+                      )
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          SizedBox(height: 16,),
+       Padding(
+         padding: const EdgeInsets.only(left: 37, top: 15),
+         child: Row(
+
+           children: [
+             InkWell(
+               onTap: (){
+                 Navigator.pop(context);
+               },
+               child: Container(
                  height: 44, width: 160,
                  decoration: BoxDecoration(
                      border: Border.all(color: Color(0XFFD0D5DD),),
-                     borderRadius: BorderRadius.circular(15)
+                     borderRadius: BorderRadius.circular(8),
+                     color: Colors.white
                  ),
                  child: Center(child: TextWidgetInterBold(title: 'Cancel', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFF344054))),
                ),
-               Container(
-                 height: 44, width: 160,
-                 decoration: BoxDecoration(
-                     color: Color(0XFF17508F),
-                   borderRadius: BorderRadius.circular(15)
+             ),
+             SizedBox(width: 10,),
+             Padding(
+               padding: const EdgeInsets.only(right: 35),
+               child: InkWell(
+                 onTap: () {
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                         builder: (context) => const PaymentScreen()),
+                   );
+                 },
+                 child: Container(
+                   height: 44, width: 160,
+                   decoration: BoxDecoration(
+                       color: Color(0XFF17508F),
+                     borderRadius: BorderRadius.circular(8)
+                   ),
+                   child: Center(child: TextWidgetInterBold(title: 'Confirm', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFFF0F4F7))),
                  ),
-                 child: Center(child: TextWidgetInterBold(title: 'Confirm', fontSize: 14, fontWeight: FontWeight.w400, color: Color(0XFFF0F4F7))),
-               )
-             ],
-           )
+               ),
+             )
+           ],
+         ),
+       )
 
-            ],
-          ),
-        ),
+        ],
       ),
     );
   }

@@ -322,12 +322,14 @@ class NewVault extends StatelessWidget {
                           color: AppColors.whiteFF,
                           shape: BoxShape.circle,
                         ) ,
-                        child: Icon(Icons.broken_image_outlined,color: AppColors.darkGrey84,size: MySize.size35,),
+                        child: CircleAvatar(
+                          backgroundColor: Colors.white,
+                            child: Image.asset('assets/background/icons/gallery.png', height: 24, width: 24,)),
                       ),
                     ),
                     SizedBox(height: MySize.size10,),
                     TextWidgetInterBold(
-                      title: 'Change Icon',
+                      title: 'Change icon',
                       color: AppColors.darkBlue46,
                       fontSize: MySize.size12,
                       fontWeight: FontWeight.w500,
@@ -347,7 +349,7 @@ class NewVault extends StatelessWidget {
                           children: [
                             TextWidgetInterBold(
                               title: 'Credential',
-                              color: AppColors.darkBlack21,
+                              color: Color(0XFF47495B),
                               fontSize: MySize.size16,
                               fontWeight: FontWeight.w600,
                             ),
@@ -377,7 +379,7 @@ class NewVault extends StatelessWidget {
                                   children: [
                                     TextWidgetInterBold(
                                       title: 'Select Category',
-                                      color: AppColors.lightBlack5B,
+                                      color: Color(0XFFCCCFD4),
                                       fontSize: MySize.size14,
                                       fontWeight: FontWeight.w400,
                                     ),
@@ -408,7 +410,7 @@ class NewVault extends StatelessWidget {
                             ),
                             SizedBox(height: MySize.size16,),
                             TextWidgetInterBold(
-                              title: 'site Address',
+                              title: 'Site Address',
                               color: AppColors.darkGrey84,
                               fontSize: MySize.size14,
                               fontWeight: FontWeight.w600,
@@ -417,11 +419,13 @@ class NewVault extends StatelessWidget {
                             TextFieldWidget(
                               hintText: 'Enter Site Address',
                               prefixIcon: AppConstants.globeLogo,
-                              suffixicon: Container(width: 47, height: 24,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8)
+                              suffixicon: SizedBox(
+                                child: Container(width: 70, height: 24,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8)
+                                  ),
+                                  child: TextWidgetInterMedium(title: 'View', fontSize: 12, fontWeight: FontWeight.w500, color: Color(0XFF)),
                                 ),
-                                child: TextWidgetInterMedium(title: 'view', fontSize: 12, fontWeight: FontWeight.w500, color: Color(0XFF)),
                               ),
 
                             ),
@@ -434,8 +438,8 @@ class NewVault extends StatelessWidget {
                             ),
                             SizedBox(height: MySize.size4,),
                             TextFieldWidget(
-                              hintText: 'Enter User Name',
-                              prefixIcon: Icon(Icons.person, color: Color(0XFF165290),),
+                              hintText: 'Enter Username',
+                              prefixIcon: Image.asset('assets/background/icons/profile.png', scale: 4,),
                               suffixicon: Container(width: 47, height: 24,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(8)
@@ -454,12 +458,15 @@ class NewVault extends StatelessWidget {
                             TextFieldWidget(
                               hintText: 'Enter Password',
                               prefixIcon: AppConstants.lockLogo,
-                              suffixicon: Container(width: 47, height: 24,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(8),
-                                  color: Color(0XFF168DBC).withOpacity(.20),
+                              suffixicon: Padding(
+                                padding: const EdgeInsets.only(top: 6, bottom: 7, right: 5),
+                                child: Container(width: 60, height: 16,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(8),
+                                    color: Color(0XFF168DBC).withOpacity(.20),
+                                  ),
+                                  child: Center(child: TextWidgetInterMedium(title: 'View', fontSize: 12, fontWeight: FontWeight.w500, color: Color(0XFF165290))),
                                 ),
-                                child: Center(child: TextWidgetInterMedium(title: 'view', fontSize: 12, fontWeight: FontWeight.w500, color: Color(0XFF165290))),
                               ),
                             ),
                             SizedBox(height: MySize.size16,),
@@ -473,7 +480,7 @@ class NewVault extends StatelessWidget {
                             TextFieldWidget(
                               hintText: 'Generate Password',
                               prefixIcon: AppConstants.lockLogo,
-                              suffixicon:Icon(Icons.copy)
+                              suffixicon: Image.asset('assets/background/icons/copy_bottom.png', scale: 4,)
                             ),
                             SizedBox(height: MySize.size12,),
                             Center(
@@ -503,6 +510,7 @@ class NewVault extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: AppColors.whiteFF,
                         borderRadius: BorderRadius.circular(MySize.size16),
+                          border: Border.all(color: Colors.transparent, width: 0)
                       ),
                       child: Padding(
                         padding:  EdgeInsets.all(MySize.size16),
@@ -512,24 +520,25 @@ class NewVault extends StatelessWidget {
                             TextWidgetInterBold(
                               title: 'Add Tag',
                               color: AppColors.darkBlack21,
-                              fontSize: MySize.size16,
+                              fontSize: 18,
                               fontWeight: FontWeight.w600,
                             ),
                             SizedBox(height: MySize.size12,),
                             SizedBox(
                               height: MySize.size36,
-                              width: MySize.size72,
+                              width: 62,
                               child:  GestureDetector(
                                 onTap: (){},
                                 child: Chip(
+                                  side: BorderSide.none,
                                   labelPadding: EdgeInsets.only(left: MySize.size8),
                                   label: Row(
                                     children:[
                                       TextWidgetInterBold(
                                         title: 'Add +',
                                         color: AppColors.lightBlack5B,
-                                        fontSize: MySize.size12,
-                                        fontWeight: FontWeight.w600,
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.w500,
                                       ),
                                     ],
                                   ),
@@ -560,6 +569,7 @@ class NewVault extends StatelessWidget {
 
                           ),
                           borderRadius: BorderRadius.circular(MySize.size16),
+
                         ),
                         child: const Center(child: Text('Create the vault',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: AppColors.whiteFF),)),
                       ),

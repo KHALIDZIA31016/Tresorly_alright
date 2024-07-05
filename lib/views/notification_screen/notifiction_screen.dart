@@ -3,6 +3,7 @@ import 'package:tresorly/utils/app_colors/app_colors.dart';
 
 import '../../base/text_widget.dart';
 import '../../base_h/customAppBar.dart';
+import '../../menu/menu.dart';
 import '../../utils/my_size.dart';
 
 
@@ -43,13 +44,16 @@ class _NotificationScreenState extends State<NotificationScreen> {
       ),
       backgroundColor: AppColors.greyF7,
       body:  Padding(
-        padding: const EdgeInsets.only(left: 35, right: 35, top: 20),
+        padding: const EdgeInsets.only(left: 25,  top: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextWidgetInterBold(
-                title: 'Manage Notifications & Alerts', fontSize: 16,
-                color: AppColors.blue8F,fontWeight: FontWeight.w500),
+            Padding(
+              padding: const EdgeInsets.only(left: 12),
+              child: TextWidgetInterBold(
+                  title: 'Manage Notifications & Alerts', fontSize: 18,
+                  color: AppColors.blue8F,fontWeight: FontWeight.w500, FontFamily: 'Outfit-Regular'),
+            ),
 
             ListView.builder(
               shrinkWrap: true,
@@ -57,11 +61,11 @@ class _NotificationScreenState extends State<NotificationScreen> {
               itemBuilder: (context, index) => ListTile(
                 title: TextWidgetInterBold(
                     title: '${switchTitle[index]}', fontSize: 14,
-                    color: AppColors.blue8F,fontWeight: FontWeight.w400),
+                    color: AppColors.blue8F,fontWeight: FontWeight.w400, FontFamily: 'Outfit-Regular'),
                 subtitle: TextWidgetInterBold(
-                    title: '${switch_subTitle[index]}', fontSize: 10,
-                    color: AppColors.blue8F,fontWeight: FontWeight.w400),
-                trailing:  Switch(
+                    title: '${switch_subTitle[index]}', fontSize: 12,
+                    color: AppColors.blue8F,fontWeight: FontWeight.w400, FontFamily: 'Outfit-Regular'),
+                trailing:   Switch(
                   value: val,
                   onChanged: (value)
                   => {setState(() {
@@ -69,12 +73,34 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   })},
                   activeColor: Color(0XFF168DBC),
                   activeTrackColor: Color(0XFF168DBC),
-                  inactiveTrackColor: Colors.white,
-                  thumbColor: val ? MaterialStateProperty.all(AppColors.whiteColor) : MaterialStateProperty.all(AppColors.blue8F),
+                  inactiveTrackColor: Colors.grey.withOpacity(.15),
+                  thumbColor: val ? MaterialStateProperty.all(Colors.white54) : MaterialStateProperty.all(Colors.white12),
                 ),
               ),),
-
-
+           Spacer(),
+            Padding(
+              padding: const EdgeInsets.only( left: 8, top: 10, bottom: 30, ),
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const Menu()),
+                  );
+                },
+                child: Container(
+                  height: 52, width: 355,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC).withOpacity(.6)])
+                  ),
+                  child: Center(
+                    child: Text('Save Changes', style: TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white
+                    ),),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

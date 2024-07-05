@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import '../utils/app_colors/app_colors.dart';
-import '../utils/my_size.dart';
-
-class TextFieldWidget extends StatelessWidget {
-  final Widget? suffixicon;
+import '../../../utils/my_size.dart';
+import '../../utils/app_colors/app_colors.dart';
+class EditVaultTextField extends StatelessWidget {
+  final IconData? suffixicon;
   final String? hintText;
   final Widget? prefixIcon;
   final FontWeight? fontWeight;
   final double? height;
+  final Widget? suffixIcon;
+  final Widget? suffix;
+  final Widget? prefix;
 
-  const TextFieldWidget ({super.key, this.suffixicon, this.hintText, this.prefixIcon, this.fontWeight, this.height, });
+  const EditVaultTextField ({super.key, this.suffixicon, this.hintText, this.prefixIcon, this.fontWeight, this.height, this.suffixIcon, this.suffix, this.prefix,});
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +20,23 @@ class TextFieldWidget extends StatelessWidget {
       width: MySize.scaleFactorWidth* 300,
       child: TextFormField(
           decoration: InputDecoration(
+
             filled: true,
             fillColor: AppColors.whiteFF,
-            prefixIcon:prefixIcon,
+            prefixIcon: Padding(
+              padding: const EdgeInsets.only(left: 0.0,right: 10),
+              child: prefixIcon,
+            ),
+            prefix: prefix,
             hintText: hintText,
             hintStyle: TextStyle(
               fontSize: MySize.size14,
-              // fontWeight:fontWeight,
-              // color: Color(0XFF47495B).withOpacity(.5),
-              color: Color(0XFFCCCFD4),
+              fontWeight:fontWeight,
+              color: const Color(0xff47495B),
               height: height,
             ),
-            suffixIcon: suffixicon,
+            suffixIcon: Icon(suffixicon,color: AppColors.lightBlack5B,size: MySize.size20,),
+            suffix: suffix,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(MySize.size8),
               borderSide:  const BorderSide(

@@ -93,6 +93,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tresorly/base/text_widget.dart';
 import 'package:tresorly/utils/my_size.dart';
 import 'package:tresorly/views/forgot_password/otp_verification.dart';
@@ -115,7 +116,7 @@ class ForgetPassword extends StatelessWidget {
               height: double.infinity,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/background/signIn_bg.png'),
+                  image: AssetImage('assets/background/Sign.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -126,7 +127,8 @@ class ForgetPassword extends StatelessWidget {
                     title: 'Forgot Password?',
                     color: AppColors.greyF7,
                     fontWeight: FontWeight.w500,
-                    fontSize: MySize.size26,
+                    FontFamily: 'Poppins-Regular',
+                    fontSize: 28,
                   ),
                   SizedBox(
                     height: MySize.size10,
@@ -135,14 +137,15 @@ class ForgetPassword extends StatelessWidget {
                     title: 'Forgot Your Password? Don’t Worry we\nhave your back',
                     color: AppColors.greyF7,
                     fontWeight: FontWeight.w400,
-                    fontSize: MySize.size12,
+                    fontSize: 12.5,
+                    FontFamily: 'Poppins-Regular',
                     align: TextAlign.center,
                   ),
                   SizedBox(
                     height: MySize.size25,
                   ),
                   SizedBox(
-                      width: MySize.scaleFactorWidth * 250,
+                      width: MySize.scaleFactorWidth * 280,
                       height: MySize.scaleFactorHeight * 45,
                       child: const CustomTextField(
                         hintText: 'Email',
@@ -152,15 +155,20 @@ class ForgetPassword extends StatelessWidget {
                   SizedBox(
                     height: MySize.size5,
                   ),
+
                   Padding(
-                    padding: EdgeInsets.only(right: MySize.size25),
-                    child: TextWidgetInterBold(
-                      title:
-                      'A link will be sent to your email to reset\nyour password',
-                      color: AppColors.greyF7,
-                      fontWeight: FontWeight.w400,
-                      fontSize: MySize.size12,
-                      align: TextAlign.start,
+                    padding: const EdgeInsets.only(left: 65),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextWidgetInterBold(
+                        title:
+                        'A link will be sent to your email to reset\nyour password',
+                        color: AppColors.greyF7,
+                        fontWeight: FontWeight.w300,
+                        FontFamily: 'Poppins-Regular',
+                        fontSize: 13.5,
+                        align: TextAlign.start,
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -176,8 +184,9 @@ class ForgetPassword extends StatelessWidget {
                       },
                       child: ButtonContainer(
                         height: MySize.scaleFactorHeight * 45,
-                        width: MySize.scaleFactorWidth * 257,
-                          title: 'Send Recovery Link')),
+                        width: MySize.scaleFactorWidth * 272,
+                          title: 'Send Recovery Link',
+                      )),
                 ],
               ),
             ),

@@ -313,6 +313,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:tresorly/utils/my_size.dart';
+import 'package:tresorly/views/auth_screens/signup_screen/signup_screen.dart';
 import '../base_h/customAppBar.dart';
 import '../newvault/newvault.dart';
 import '../utils/app_colors/app_colors.dart';
@@ -366,6 +367,18 @@ class _MyVaultState extends State<MyVault> {
     },
   ];
 
+
+  List<String> subTitle = [
+
+    'Gmail',
+    'Messenger',
+    'Udemy',
+    'Netflix',
+    'Coursera'
+  ];
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -387,11 +400,11 @@ class _MyVaultState extends State<MyVault> {
           ),
         ),
       ),
-        body: Padding(
-            padding: EdgeInsets.only(
-              top: MySize.size110,
-            ),
-            child: SingleChildScrollView(
+        body: SingleChildScrollView(
+          child: Padding(
+              padding: EdgeInsets.only(
+                top: MySize.size110,
+              ),
               child: Column(
                 children: [
                   SizedBox(
@@ -454,6 +467,9 @@ class _MyVaultState extends State<MyVault> {
                   SizedBox(
                     height: MySize.size20,
                   ),
+          
+                  /// Listings
+          
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
@@ -517,7 +533,7 @@ class _MyVaultState extends State<MyVault> {
                                 ),
                               ),
                               child: Container(
-
+          
                                 margin: EdgeInsets.only(top: MySize.size12),
                                 height: MySize.scaleFactorHeight * 84,
                                 width: MySize.scaleFactorWidth * 334,
@@ -593,10 +609,16 @@ class _MyVaultState extends State<MyVault> {
                                       ],
                                     ),
                                     const Spacer(),
-                                    Icon(
-                                      Icons.copy_rounded,
-                                      color: AppColors.darkGrey84,
-                                      size: MySize.size26,
+                                    InkWell(
+                                      onTap: () {
+                                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                            content: Center(child: Text('Copied password'))));
+                                      },
+                                      child: Icon(
+                                        Icons.copy_rounded,
+                                        color: AppColors.darkGrey84,
+                                        size: MySize.size26,
+                                      ),
                                     ),
                                     SizedBox(
                                       width: MySize.size4,
@@ -627,10 +649,11 @@ class _MyVaultState extends State<MyVault> {
                         },
                       ),
                     ),
-                  ),
+          
+                  )
                 ],
               ),
-            ),
+          ),
         ),
     );
   }

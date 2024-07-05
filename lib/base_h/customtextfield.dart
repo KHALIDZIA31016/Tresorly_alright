@@ -13,12 +13,12 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: AppColors.whiteFF.withOpacity(0.10),
-          contentPadding: EdgeInsets.all(MySize.size12),
+          contentPadding: EdgeInsets.all(12),
           suffixIcon: Icon(icon,
               color: AppColors.greyF7.withOpacity(0.5)),
           hintText: hintText,
           hintStyle:
-          TextStyle(color: AppColors.greyF7.withOpacity(0.5)),
+          TextStyle(color: AppColors.greyF7.withOpacity(0.5), fontFamily: 'Poppins-Regular'),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(MySize.size5),
             borderSide: BorderSide.none,

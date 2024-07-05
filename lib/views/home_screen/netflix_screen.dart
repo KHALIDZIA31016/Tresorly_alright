@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:linear_progress_bar/linear_progress_bar.dart';
@@ -8,6 +9,7 @@ import 'package:tresorly/utils/app_colors/app_colors.dart';
 import 'package:tresorly/utils/app_constants/app_constant.dart';
 import 'package:tresorly/views/auth_screens/login_screen/base/appBar.dart';
 import 'package:tresorly/views/auth_screens/signup_screen/signup_screen.dart';
+import 'package:tresorly/views/change_password/change_password.dart';
 
 import '../../base/text_widget.dart';
 
@@ -19,20 +21,20 @@ class DetailNetflix extends StatefulWidget {
 }
 
 class _DetailNetflixState extends State<DetailNetflix> {
-  double _value = 8;
+  // double _value = 8;
   bool val = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greyF7,
-      appBar:  PreferredSize(preferredSize: Size(120, 100),
+      appBar:  PreferredSize(preferredSize: Size(10, 100),
           child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 25),
+            padding: EdgeInsets.only(left: 0, right: 25),
             child: CustomAppBar(
               appBg_Color: Colors.transparent,
               myTitle: 'Details',
               leadingIcon: Padding(
-                padding: const EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(right: 15),
                 child: CircleAvatar(
                     minRadius: 10,
                     maxRadius: 40,
@@ -44,7 +46,14 @@ class _DetailNetflixState extends State<DetailNetflix> {
                     )),
               ),
               actions: [
-                  Icon(Icons.favorite, color: Colors.red, size: 15,),
+                  Container(
+                      width: 25, height: 25,
+                      child: Icon(Icons.favorite, color: Colors.red, size: 15,),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle
+                  ),
+                  ),
               ],
 
             ),
@@ -74,7 +83,8 @@ class _DetailNetflixState extends State<DetailNetflix> {
                       Icon(Icons.star, color: Color(0XFF757784),size: 12,),
                       Icon(Icons.star, color: Color(0XFF757784),size: 12,),
                       Icon(Icons.star, color: Color(0XFF757784),size: 12,),
-                      SizedBox(width: 10,),
+                      Icon(Icons.star, color: Color(0XFF757784),size: 12,),
+                      SizedBox(width: 15,),
                       Icon(Icons.remove_red_eye,color: Color(0XFF757784), size: 18,),
                     ],
                   ),
@@ -96,7 +106,7 @@ class _DetailNetflixState extends State<DetailNetflix> {
          ),
 
 
-          Center(child: Image.asset('assets/images/percen.png', width: 230, height: 239,)),
+          Center(child: Image.asset('assets/images/percen.png', width: 270, height: 270,)),
           Expanded(
             child: Container(
               height: 944, width: 375,
@@ -151,23 +161,79 @@ class _DetailNetflixState extends State<DetailNetflix> {
                           ),
                           const SizedBox(height: 25),
 
-                          Slider(
-                            min: 1,
-                            max: 10,
-                            value: _value, // Use _value variable
-                            activeColor: Colors.red,
-                            inactiveColor: Color(0XFF168DBC).withOpacity(.5),
-                            onChanged: (value) => setState(() {
-                              _value = value; // Update the _value variable
-                            }),
-                            label: 'Strong',
-                            thumbColor: AppColors.whiteColor,
-                            // overlayColor:MaterialStateProperty.all(AppColors.greenColor),
-                          ),
+                         Stack(
+                           clipBehavior: Clip.none,
+                           children: [
+
+                             Container(
+                               height: 4, width: 300,
+                               decoration: BoxDecoration( shape: BoxShape.values[0],
+                                   gradient: LinearGradient
+                                     (colors: [Color(0XFFE5201B),Color(0XFF34A853),Color(0XFF168DBC).withOpacity(.5), Color(0XFF168DBC).withOpacity(.5) ])
+                               ),
+                             ),
+
+                             Positioned(
+                               right: 100,
+                               top: -12, // Adjust this value to vertically center the CircleAvatar on the container
+                               child: Container(
+                                 decoration: BoxDecoration(
+                                   shape: BoxShape.circle,
+                                   color: Colors.white, // CircleAvatar background color
+                                   boxShadow: [
+                                     BoxShadow(
+                                       color: Colors.black.withOpacity(0.5), // Shadow color
+                                       spreadRadius: 1, // Spread radius
+                                       blurRadius: 5, // Blur radius
+                                       offset: Offset(0, 3), // Offset in the downward direction
+                                     ),
+                                   ],
+                                 ),
+                                 child: CircleAvatar(
+                                   radius: 12, // Adjust the radius as needed
+                                   backgroundColor: Colors.transparent, // Make the background transparent as it's set in the container
+                                 ),
+                               ),
+                             ),
+                           ],
+                         ),
+
+                        SizedBox(height: 10,),
+
+                          // Container(
+                          //   height: 4,
+                          //   decoration: BoxDecoration(
+                          //     shape: BoxShape.values[0],
+                          //     gradient: LinearGradient(colors: [Colors.white, Colors.white, Colors.red, Colors.brown])
+                          //   ),
+                          //   child: Slider(
+                          //     min: 1,
+                          //     max: 10,
+                          //     value: _value, // Use _value variable
+                          //     // activeColor: Colors.red,
+                          //     // inactiveColor: Color(0XFF168DBC).withOpacity(.5),
+                          //     onChanged: (value) => setState(() {
+                          //       _value = value; // Update the _value variable
+                          //     }),
+                          //     label: 'Strong',
+                          //     thumbColor: AppColors.whiteColor,
+                          //     // overlayColor:MaterialStateProperty.all(AppColors.greenColor),
+                          //   ),
+                          // ),
 
                           Padding(
                             padding: const EdgeInsets.only(left: 200),
-                            child: TextWidgetInterBold(title: 'Strong', fontSize: 16,),
+                            child: Text('Strong', style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 16,
+                              color: Colors.black,
+                              shadows: [
+                                Shadow(
+                                  color: Colors.black.withOpacity(.5),
+                                  blurRadius: 15,
+                                  offset: Offset(02, 03)
+                                )
+                              ]
+                            ),),
                           ),
                           20.ht,
 
@@ -192,8 +258,8 @@ class _DetailNetflixState extends State<DetailNetflix> {
                           Row(
                             children: [
                               TextWidgetInterMedium(title: 'Last Updated: ', fontSize: 12, fontWeight: FontWeight.w400, color: Color(0XFF17508F)),
-                              SizedBox(width: 8,),
-                              TextWidgetInterMedium(title: '23/07/2022 ', fontSize: 10, fontWeight: FontWeight.w400, color: Color(0XFF17508F)),
+                              SizedBox(width: 2,),
+                              TextWidgetInterMedium(title: '23/07/2022 ', fontSize: 10, fontWeight: FontWeight.w400, color: Color(0XFF17508F).withOpacity(.6)),
                             ],
                           ),
                           SizedBox(height: 25,),
@@ -210,6 +276,7 @@ class _DetailNetflixState extends State<DetailNetflix> {
                               Row(
                                 children: [
                                   Image.asset(AppConstants.tick_Icon, scale: 3.5,),
+                                  SizedBox(width: 7,),
                                   TextWidgetInterBold(title: 'Secure Password ', fontSize: 10, fontWeight: FontWeight.w400, color: Color(0XFF34A853))
                                 ],
                               )
@@ -230,8 +297,8 @@ class _DetailNetflixState extends State<DetailNetflix> {
                               })},
                               activeColor: Color(0XFF168DBC),
                               activeTrackColor: Color(0XFF168DBC),
-                              inactiveTrackColor: Color(0XFF168DBC),
-                              thumbColor: val ? MaterialStateProperty.all(Colors.white) : MaterialStateProperty.all(Colors.white),
+                              inactiveTrackColor: Colors.grey.withOpacity(.15),
+                              thumbColor: val ? MaterialStateProperty.all(Colors.white54) : MaterialStateProperty.all(Colors.white12),
                               ),
 
                             ],
@@ -252,7 +319,7 @@ class _DetailNetflixState extends State<DetailNetflix> {
 
 
                           Padding(
-                            padding: const EdgeInsets.only(left: 50, right: 50, bottom: 15, top: 40),
+                            padding: const EdgeInsets.only(left: 60, right: 50, bottom: 15, top: 40),
                             child: TextWidgetInterMedium(
                                 title: 'Recommendations',
                                 fontSize: 22  , fontWeight: FontWeight.w600,
@@ -263,27 +330,26 @@ class _DetailNetflixState extends State<DetailNetflix> {
                               title: 'Update your password to a strong and unique '
                                   '\ncombination to protect your account from'
                                   ' \nunauthorized access.',
-                              fontSize: 10, fontWeight: FontWeight.w400,
+                              fontSize: 12,
                               color: Color(0XFF17508F), align: TextAlign.start
                           ),
-
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(5),
-                              child: ElevatedButton(
-
-                                style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5.0),
-                                      ),
-                                    ),
-                                  backgroundColor: MaterialStateProperty.all<Color>(Color(0XFF168DBC))
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30, top: 15),
+                            child: Align(
+                              alignment: Alignment.centerRight,
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ChangePassword()));
+                                },
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 25),
+                                  height: 40, width: 150,
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC)]),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: Center(child: TextWidgetInterMedium(title: 'Change Password', fontSize: 12, fontWeight: FontWeight.w400, color: Color(0XFFF0F4F7)))
                                 ),
-                                /*168DBC, 165290*/
-                                  onPressed: (){}, child: TextWidgetInterMedium(
-                                  title: 'Change password', fontSize: 14, color: Color(0XFFF0F4F7)),
                               ),
                             ),
                           ),

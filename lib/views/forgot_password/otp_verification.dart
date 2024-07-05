@@ -41,11 +41,11 @@ class _OTPVerificationState extends State<OTPVerification> {
             child: Column(
               children: [
                 const SizedBox(height: 250,),
-                TextWidgetInterMedium(title: 'Check Email', fontSize: 26, color: AppColors.whiteColor, fontWeight: FontWeight.w500),
+                TextWidgetInterMedium(title: 'Check Email', fontSize: 26, color: AppColors.whiteColor, fontWeight: FontWeight.w500, FontFamily: 'Poppins-Regular'),
                 const SizedBox(height: 15,),
                 TextWidgetInterRegular(title: 'Check your email we have sent you the \nrecovery code.',
                   fontSize: 12, color: AppColors.greyF7,
-                  fontWeight: FontWeight.w400, align: TextAlign.center,
+                  fontWeight: FontWeight.w400, align: TextAlign.center,FontFamily: 'Poppins-Regular'
                 ),
                 const SizedBox(height: 50,),
                 //   Pinput(
@@ -68,18 +68,18 @@ class _OTPVerificationState extends State<OTPVerification> {
                     Provider.of<CounterNotifier>(context, listen: false).StartTimer();
                 },
                 child: Text('00 : ${val.count.toString().padLeft(2, '0')}',
-                    style: TextStyle(color: Colors.white, fontSize: 20)),
+                    style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'Poppins-Regular')),
               );
             }),
 
                 SizedBox(height: 35,),
                 RichText(text: const TextSpan(
                     text: 'Didn\'t get a code?',
-                    style: TextStyle(fontSize: 15, color: AppColors.whiteColor),
+                    style: TextStyle(fontSize: 15, color: AppColors.whiteColor, fontFamily:  'Poppins-Regular'),
                     children: [
                       TextSpan(text: ' Resend',
-                        style: TextStyle(fontSize: 15, color: AppColors.whiteColor, fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline, decorationColor: AppColors.whiteColor
+                        style: TextStyle(fontSize: 15, color: AppColors.whiteColor, fontWeight: FontWeight.bold, fontFamily: 'Poppins-Regular'
+
                         ),)
                     ]
 
@@ -95,7 +95,7 @@ class _OTPVerificationState extends State<OTPVerification> {
                       borderRadius: BorderRadius.circular(7),
                       color: AppColors.blueBC, /*Secondary Color*/
                     ),
-                    child: Center(child: TextWidgetInterRegular(title: 'Reset Password', fontSize: 16, color: AppColors.whiteColor, fontWeight: FontWeight.w500)),
+                    child: Center(child: TextWidgetInterRegular(title: 'Reset Password', fontSize: 16, color: AppColors.whiteColor, fontWeight: FontWeight.w500, FontFamily: 'Poppins-Regular')),
                   ),
                 ),
                 const SizedBox(height: 380,),

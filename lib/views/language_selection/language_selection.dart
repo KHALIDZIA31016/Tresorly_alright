@@ -44,7 +44,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
             child: Align(
               alignment: Alignment.centerLeft,
               child: TextWidgetInterBold(
-                title: 'Select Language', fontSize: 20,
+                title: 'Select Language', fontSize: 22,
                 color: const Color(0XFF1750BF),fontWeight: FontWeight.w600,),
             ),
           ),
@@ -60,7 +60,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
              child: ListTile(
                title: Text('English (UK)', style: TextStyle(color: Colors.white),),
                leading: Image.asset('assets/icons/GB.png', scale: 3.5,),
-               trailing: Text('English (UK)', style: TextStyle(color: Colors.white),),
+               trailing: Text('(English)', style: TextStyle(color: Colors.white.withOpacity(.6)),),
              ),
            ),
          ),
@@ -71,6 +71,22 @@ class _LanguageSelectionState extends State<LanguageSelection> {
           trailingText: '()',
         ),
           SizedBox(height: 25,),
+
+          Padding(
+            padding: const EdgeInsets.only( top: 10, bottom: 30),
+            child: Container(
+              height: 52, width: 350,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC)])
+              ),
+              child: Center(
+                child: Text('Save', style: TextStyle(
+                    fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white
+                ),),
+              ),
+            ),
+          ),
         ],
       ),
     );

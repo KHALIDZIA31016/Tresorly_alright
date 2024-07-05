@@ -5,6 +5,7 @@ Widget TextWidgetInterBold(
       double? height = 1,
     required String title,
     Color color = Colors.black,
+      String FontFamily = 'Poppins',
     double fontSize = 12,
     FontWeight fontWeight = FontWeight.normal,
     TextAlign align = TextAlign.start
@@ -19,7 +20,7 @@ Widget TextWidgetInterBold(
       color: color,
       height: 1.5,
       wordSpacing: 0,
-      fontFamily: 'Inter-Bold',
+      fontFamily: FontFamily,
     ),
     textAlign: align,
   );
@@ -30,6 +31,7 @@ Widget TextWidgetInterRegular(
     Color color = Colors.black,
     double fontSize = 12,
     FontWeight fontWeight = FontWeight.normal,
+      String FontFamily = 'Poppins',
     TextAlign align = TextAlign.start}) {
   return Text(
     title,
@@ -39,7 +41,7 @@ Widget TextWidgetInterRegular(
       color: color,
       height: 1.5,
       wordSpacing: 0,
-      fontFamily: 'Inter-Regular',
+      fontFamily: FontFamily,
     ),
     textAlign: align,
   );
@@ -49,6 +51,7 @@ Widget TextWidgetInterMedium(
     {required String title,
     Color color = Colors.black,
     double fontSize = 12,
+      String FontFamily = 'Poppins',
     FontWeight fontWeight = FontWeight.normal,
     TextAlign align = TextAlign.start}) {
   return Text(
@@ -59,7 +62,7 @@ Widget TextWidgetInterMedium(
       color: color,
       height: 1.5,
       wordSpacing: 0,
-      fontFamily: 'Inter-Medium',
+      fontFamily: FontFamily,
     ),
     maxLines: 2,
     overflow: TextOverflow.ellipsis,
@@ -71,6 +74,7 @@ Widget TextWidgetMerri(
     {required String title,
     Color color = Colors.black,
     double fontSize = 12,
+      String FontFamily = 'Poppins',
     FontWeight fontWeight = FontWeight.normal,
     TextAlign align = TextAlign.start}) {
   return Text(
@@ -81,7 +85,7 @@ Widget TextWidgetMerri(
       color: color,
       height: 1.5,
       wordSpacing: 5,
-      fontFamily: '',
+      fontFamily: FontFamily,
     ),
     textAlign: align,
   );

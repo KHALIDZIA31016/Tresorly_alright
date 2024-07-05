@@ -18,7 +18,7 @@ class AppConstants {
   static const String faceID  = 'assets/images/face_id.png';
 
 
-  static const String starIcon  = 'assets/images/star.png';
+  static const String starIcon  = 'assets/icons/mob_app.png';
   static const String browsIcon  = 'assets/images/brows.png';
   static const String paymentIcon  = 'assets/images/payment.png';
 
@@ -67,15 +67,18 @@ class AppConstants {
   static const String three_dotsIcon  = 'assets/images/three_dots.png';
 
   static List<Widget> leadingTile = [
-    Image.asset(AppConstants.netflixIcon, height: 35,width: 32),
-    Image.asset(AppConstants.messengerIcon, height: 32,width: 32),
+    // Image.asset(AppConstants.netflixIcon, height: 35,width: 32),
+    Image.asset('assets/netf.png', scale: 3, ),
+    Image.asset('assets/mesg.png', scale: 3,),
+
   ];
   static List<Widget> trailingTile1 = [
     Image.asset(AppConstants.copyIcon, height: 22,width: 22),
    const Icon(Icons.favorite, color: Colors.red,size: 20,)
   ];
   static List<Widget> trailingTile2 = [
-    Image.asset(AppConstants.addIcon,  height: MySize.scaleFactorHeight * 52,width: MySize.scaleFactorWidth * 52),
+    // Image.asset(AppConstants.addIcon,  height: MySize.scaleFactorHeight * 78,width: MySize.scaleFactorWidth * 52),
+    Image.asset(AppConstants.addIcon,  scale: 2,),
 
   ];
 
@@ -119,7 +122,7 @@ class AppConstants {
   static Image courseraLogo= const Image(image:AssetImage('assets/assets_h/images/coursera.png',));
   static Image netflixLogo= const Image(image:AssetImage('assets/assets_h/images/netflix.png',));
   static Image udemyLogo= const Image(image:AssetImage('assets/assets_h/images/udemy.png',));
-  static Image profileLogo= const Image(image:AssetImage('assets/assets_h/images/profile.png',));
+  static Image profileLogo= const Image(image:AssetImage('assets/prof.png',), height: 150, width: 150,);
   static Image binLogo= const Image(image:AssetImage('assets/assets_h/images/bin.png',));
 
 

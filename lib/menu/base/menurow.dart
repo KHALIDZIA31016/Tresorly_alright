@@ -32,6 +32,7 @@ class MenuRow extends StatelessWidget {
           title:title,
           color:color2 ?? AppColors.darkBlue46,
           fontSize: MySize.size14,
+          FontFamily: 'Outfit-Regular',
           fontWeight: FontWeight.w400,
         ),
         const Spacer(),

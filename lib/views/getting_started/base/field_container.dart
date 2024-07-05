@@ -11,14 +11,14 @@ class FieldContainer extends StatelessWidget {
     required this.height,
     required this.width,
     this.color,
-    required this.borderRadius,
+    this.borderRadius,
   });
   final String title;
   final String? imageIcon;
   final double height;
   final double width;
   final Color? color;
-  final BorderRadius borderRadius;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +28,15 @@ class FieldContainer extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(
           borderRadius: borderRadius,
-          border: Border.all(color:AppColors.greyF7.withOpacity(.3)),
-        boxShadow: [BoxShadow(color:AppColors.bgColor, blurRadius: 4, spreadRadius: 0),],
+          border: const Border.fromBorderSide(BorderSide.none),
+        // boxShadow: const[
+           // BoxShadow(
+           //    color:AppColors.bgColor,
+           //    blurRadius: 4,
+           //    spreadRadius: 0,
+           //    offset: Offset(0,  0)
+          // ),],
+
         color: color,
       ),
       child: Row(
@@ -37,7 +44,7 @@ class FieldContainer extends StatelessWidget {
         children: [
           if (imageIcon != null) Image.asset(imageIcon!, height: 26, width: 22,),
           const SizedBox(width: 15,),
-          TextWidgetInterRegular(title: title, fontSize: 14, color: AppColors.greyF7)
+          TextWidgetInterRegular(title: title, fontSize: 14, color: const Color(0XFFF0F4F7), FontFamily: 'Poppins-Regular')
         ],
       ),
     );

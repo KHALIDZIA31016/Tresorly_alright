@@ -35,7 +35,7 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
           ),
         ),
       ),
-      backgroundColor: const Color(0XFFF0F4F7),
+      backgroundColor: Color(0XFFF0F4F7),
       body:
       Padding(
         padding: const EdgeInsets.only(left: 40, right: 40, top: 20),
@@ -45,8 +45,8 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
             Padding(
               padding: const EdgeInsets.only(top: 22, bottom: 18),
               child: TextWidgetInterBold(
-                  title: 'Legal and Regulatory', fontSize: 14,
-                  color: const Color(0XFF1750BF),fontWeight: FontWeight.w400),
+                  title: 'Legal and Regulatory', fontSize: 20,
+                  color: const Color(0XFF17508F),fontWeight: FontWeight.w400, FontFamily: 'Outfit-Regular'),
             ),
             Container(
               height: 44, width: 331,
@@ -68,10 +68,10 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
-                        child: TextWidgetInterBold(title: 'Terms of Service', fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.blue8F),
+                        child: TextWidgetInterBold(title: 'Terms of Service', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.blue8F),
                       ),
                       Spacer(),
-                      Icon(Icons.arrow_drop_down_outlined, size: 35, color: AppColors.blue8F,)
+                      Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
                     ],
                   )
                 ],
@@ -86,24 +86,24 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                      'adipiscing sit in porttitor viverra. Erat maecenas euismod a dictum. Interdum massa senectus ultricies '
                      'malesuada scelerisque sed \n\n\nDiam quam dignissim dignissim tellus tellus eu sed a. Et nec suspendisse ante sed'
                      ' odio sit mauris nec sit. Adipiscing ipsum lacus in penatibus tortor faucibus nisl diam. ',
-                 style: TextStyle(fontSize: 12, fontWeight:FontWeight.w400, color: AppColors.balck),
+                 style: TextStyle(fontSize: 16, fontWeight:FontWeight.w400, color: AppColors.balck),
                ),
                TextSpan(
                  text: 'Aenean non ut malesuada',
-                 style: TextStyle(fontSize: 12, fontWeight:FontWeight.w700, color: AppColors.balck),
+                 style: TextStyle(fontSize: 16, fontWeight:FontWeight.w700, color: AppColors.balck),
                ),
                TextSpan(
                  text: ' gravida vel integer suspendisse arcu velit. Facilisis vel lectus a nisi. Vitae donec ipsum eu nulla '
                        'pellentesque semper. Dapibus egestas diam mi eleifend risus nunc enim.',
-                 style: TextStyle(fontSize: 12, fontWeight:FontWeight.w400, color: AppColors.balck),
+                 style: TextStyle(fontSize: 16, fontWeight:FontWeight.w400, color: AppColors.balck),
                ),
                TextSpan(
                  text: ' Natoque pellentesque amet interdum ut felis. Vitae integer posuere',
-                 style: TextStyle(fontSize: 12, fontWeight:FontWeight.w700, color: AppColors.balck),
+                 style: TextStyle(fontSize: 16, fontWeight:FontWeight.w700, color: AppColors.balck),
                ),
                TextSpan(
                  text: ' euismod ut amet. Diam amet egestas pretium a ultrices auctor cras scelerisque. In porttitor sed',
-                 style: TextStyle(fontSize: 12, fontWeight:FontWeight.w400, color: AppColors.balck),
+                 style: TextStyle(fontSize: 14, fontWeight:FontWeight.w400, color: AppColors.balck),
                ),
              ]
            )),
@@ -129,10 +129,10 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 15),
-                      child: TextWidgetInterBold(title: 'Privacy Policy', fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.blue8F),
+                      child: TextWidgetInterBold(title: 'Privacy Policy', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.blue8F, ),
                     ),
                     Spacer(),
-                    Icon(Icons.arrow_drop_down_outlined, size: 35, color: AppColors.blue8F,)
+                    Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
                   ],
                 )
                 ],
@@ -159,10 +159,10 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
-                        child: TextWidgetInterBold(title: 'Compliance Certifications', fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.blue8F),
+                        child: TextWidgetInterBold(title: 'Compliance Certifications', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.blue8F),
                       ),
                       Spacer(),
-                      Icon(Icons.arrow_drop_down_outlined, size: 35, color: AppColors.blue8F,)
+                      Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
                     ],
                   )
                 ],

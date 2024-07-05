@@ -25,7 +25,9 @@ class TextFieldComponent extends StatelessWidget {
             hintStyle: TextStyle(
               fontSize: MySize.size14,
               fontWeight:fontWeight,
-              color: AppColors.blue8F.withOpacity(.6),
+              fontFamily: 'Outfit-Regular',
+              // color: AppColors.blue8F.withOpacity(.6),
+              color: Color(0XFF165290).withOpacity(.6),
               height: height,
             ),
             suffixIcon: Icon(suffixicon,color: AppColors.blue8F.withOpacity(.6),size: MySize.size20,),

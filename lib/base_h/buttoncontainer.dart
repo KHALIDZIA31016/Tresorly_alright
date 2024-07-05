@@ -20,10 +20,10 @@ class ButtonContainer extends StatelessWidget {
       child: Center(
         child: TextWidgetInterRegular(
             title: title,
-            fontSize:MySize.size14,
+            fontSize:16,
             color:AppColors.whiteFF,
-            fontWeight: FontWeight.w500
-
+            fontWeight: FontWeight.w500,
+          FontFamily: 'Poppins-Regular'
         ),
       ),
     );

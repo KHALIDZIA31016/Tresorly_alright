@@ -18,9 +18,9 @@ class CustomDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Flexible(child: Divider(color: color,indent: indent, endIndent: endIndent,)),
+        Flexible(child: Divider(color: color,indent: indent, endIndent: endIndent, thickness: 2,)),
         TextWidgetInterRegular(title: title, fontSize: 16,color: AppColors.greyF7),
-        Expanded(child: Divider(color: color,endIndent: indent, indent: endIndent,)),
+        Expanded(child: Divider(color: color,endIndent: indent, indent: endIndent, thickness: 2,)),
       ],
     );
   }

@@ -20,7 +20,7 @@ Widget TextWidgetInterBold({
     color: color,
     fontFamily: FontFamily,
   ),
-  maxLines: 2,
+  maxLines: 4,
   overflow: TextOverflow.ellipsis,
   textAlign: align,
 );}
@@ -70,7 +70,7 @@ Widget TextWidgetInterMedium({
     color: color,
     fontFamily: FontFamily,
   ),
-    maxLines: 3,
+    maxLines: 4,
     overflow: TextOverflow.ellipsis,
     textAlign: align,
   );

@@ -28,6 +28,7 @@ class ContainerComponent extends StatelessWidget {
           TextWidgetInterBold(
             title:title,
             fontSize: MySize.size12,
+            FontFamily: 'Outfit-Regular',
             fontWeight: FontWeight.w500,
             color: AppColors.blue8F,
           ),

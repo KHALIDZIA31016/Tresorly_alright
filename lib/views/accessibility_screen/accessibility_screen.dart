@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tresorly/menu/menu.dart';
 import '../../base/text_widget.dart';
 import '../../base_h/customAppBar.dart';
 import '../../utils/app_colors/app_colors.dart';
@@ -18,6 +19,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
   List<String> switch_subTitle = ['Large Size', 'Medium Size', 'Small Size' ];
   List<double> fontSize_Title = [16, 14, 12];
 
+  int selectedIndex = -1;
   bool val = false;
   bool value = false;
   @override
@@ -38,7 +40,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
           ),
         ),
       ),
-      backgroundColor: AppColors.greyF7,
+      backgroundColor: Color(0XFFF0F4F7),
       body:
       Padding(
         padding: const EdgeInsets.only(left: 35, right: 35, top: 20),
@@ -46,8 +48,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextWidgetInterBold(
-                title: 'Customization and Accessibility', fontSize: 16,
-                color: const Color(0XFF1750BF),fontWeight: FontWeight.w500),
+                title: 'Customization and Accessibility', fontSize: 18,
+                color: const Color(0XFF17508F),fontWeight: FontWeight.w500, FontFamily: 'Outfit-Regular'),
         SizedBox(height: 20,),
         Row(
           children: [
@@ -55,10 +57,10 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
              crossAxisAlignment: CrossAxisAlignment.start,
              children: [
                TextWidgetInterBold(
-                   title: 'Theme', fontSize: 14,
+                   title: 'Theme', fontSize: 19,
                    color: AppColors.blue8F,fontWeight: FontWeight.w400),
                TextWidgetInterBold(
-                   title: 'Toggle to enable disable dark and light mode', fontSize: 10,
+                   title: 'Toggle to enable disable dark and light mode', fontSize: 12,
                    color: AppColors.blue8F,fontWeight: FontWeight.w400),
              ],
            ),
@@ -71,18 +73,13 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                   => {setState(() {
                     val = !val;
                   })},
-                  activeColor: AppColors.blueBC,
-                  activeTrackColor: AppColors.blueBC,
-                  inactiveTrackColor: AppColors.whiteColor,
-                  thumbColor:MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-                    if (states.contains(MaterialState.disabled)) {
-                      return Colors.white;
-                    }
-                    return Colors.white;
-                  }),
+                  activeColor: Color(0XFF168DBC),
+                  activeTrackColor: Color(0XFF168DBC),
+                  inactiveTrackColor: Colors.grey.withOpacity(.15),
+                  thumbColor: val ? MaterialStateProperty.all(Colors.white54) : MaterialStateProperty.all(Colors.white12),
                 ),
                 TextWidgetInterBold(
-                    title: 'Enabled', fontSize: 10,
+                    title: 'Dark Mode', fontSize: 10,
                     color: AppColors.blue8F,fontWeight: FontWeight.w400),
               ],
             )
@@ -90,24 +87,77 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
         ),
             SizedBox(height: 16,),
             TextWidgetInterBold(
-                title: 'Font Size', fontSize: 14,
+                title: 'Font Size', fontSize: 18,
                 color: AppColors.blue8F,fontWeight: FontWeight.w400),
             SizedBox(height: 18,),
-            ListView.builder(
-              shrinkWrap: true,
-              itemCount: 3,
-              itemBuilder: (context, index) => ListTile(
-                leading: Icon(Icons.circle_outlined,size: 16 ,color: Color(0XFF168DBC),),
-                title: TextWidgetInterBold(
-                    title: 'aAbBcC', fontSize: fontSize_Title[index],
-                    color: AppColors.black40,fontWeight: FontWeight.w400),
-                subtitle: TextWidgetInterBold(
-                    title: '${switch_subTitle[index]}', fontSize: 10,
-                    color: AppColors.black40,fontWeight: FontWeight.w400),
+            // ListView.builder(
+            //   shrinkWrap: true,
+            //   itemCount: 3,
+            //   itemBuilder: (context, index) => ListTile(
+            //     leading: Icon(Icons.circle_outlined,size: 16 ,color: Color(0XFF168DBC),),
+            //     title: TextWidgetInterBold(
+            //         title: 'aAbBcC', fontSize: fontSize_Title[index],
+            //         color: AppColors.black40,fontWeight: FontWeight.w400),
+            //     subtitle: TextWidgetInterBold(
+            //         title: '${switch_subTitle[index]}', fontSize: 10,
+            //         color: AppColors.black40,fontWeight: FontWeight.w400),
+            //
+            //   ),),
 
-              ),),
+            Expanded(
+              child: Column(
+                children: List.generate(3, (index) {
+                  bool isSelected = index == selectedIndex;
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                    child: ListTile(
+                      leading: Icon(
+                        isSelected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
+                        size: 24,
+                        color: isSelected ? Color(0XFF168DBC) : Color(0XFF168DBC).withOpacity(.5),
+                      ),
+                      title: TextWidgetInterBold(
+                          title: 'aAbBcC', fontSize: fontSize_Title[index],
+                          color: AppColors.black40,fontWeight: FontWeight.w400),
+                      subtitle: TextWidgetInterBold(
+                          title: '${switch_subTitle[index]}', fontSize: 10,
+                          color: AppColors.black40,fontWeight: FontWeight.w400),
 
+                    ),
+                  );
+                }),
+              ),
+            ),
 
+               Spacer(),
+            Padding(
+              padding: const EdgeInsets.only( left: 10, top: 10, bottom: 30, ),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Menu()),
+                  );
+                },
+                child: Container(
+                  height: 52, width: 355,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC)])
+                  ),
+                  child: Center(
+                    child: Text('Save Changes', style: TextStyle(
+                        fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white
+                    ),),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),

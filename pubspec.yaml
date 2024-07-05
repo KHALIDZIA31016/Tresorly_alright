@@ -41,6 +41,8 @@ dependencies:
   language_picker: ^0.4.3
   provider: ^6.1.2
   select2dot1: ^2.0.9
+  bottom_sheet: ^4.0.4
+  modal_bottom_sheet: ^3.0.0
 #  pinput: ^4.0.0
 #  flutter_stripe: ^10.1.1
 #  http: ^1.2.1
@@ -78,7 +80,18 @@ flutter:
      - assets/images/
      - assets/icons/
      - assets/background/icons/
-     - assets/background/signIn_bg.png
+     - assets/icons/messeng.png
+     - assets/icons/netflix.png
+     - assets/background/icons/gallery.png
+     - assets/background/icons/profile.png
+     - assets/background/icons/copy_bottom.png
+     - assets/assets_h/appLogo.png
+     - assets/background/splash_bg.png
+     - assets/background/Sign.png
+     - assets/netf.png
+     - assets/mesg.png
+     - assets/prof.png
+#     - assets/icons/mob_app.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -96,7 +109,9 @@ flutter:
     - family: Poppins-Regular
       fonts:
        - asset: assets/fonts/Poppins-Regular.ttf
-
+    - family: Outfit-Regular
+      fonts:
+      - asset: assets/fonts/Outfit-Regular.ttf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
