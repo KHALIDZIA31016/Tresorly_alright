@@ -1,11 +1,11 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:tresorly/utils/app_images.dart';
 
-import '../../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../../utils/my_size.dart';
-import '../../utils/app_colors/app_colors.dart';
-import '../../utils/app_constants/app_constant.dart';
+import '../../utils/app_colors.dart';
 import 'menurow.dart';
 
 class ShowDialogBox extends StatelessWidget {
@@ -66,7 +66,7 @@ class ShowDialogBox extends StatelessWidget {
                               title: 'Accept',
                               fontSize: MySize.size14,
                               fontWeight: FontWeight.w400,
-                              color: Color(0XFF2B83F2),
+                              color: const Color(0XFF2B83F2),
                               align:TextAlign.center,
                             ),
                           ),
@@ -81,7 +81,7 @@ class ShowDialogBox extends StatelessWidget {
       child: MenuRow(
           title: 'Delete Account',
           color2: AppColors.red1B,
-          image: const AssetImage(AppConstants.deleteLogo),
+          image: const AssetImage(AppImages.deleteLogo),
           color: AppColors.red1B.withOpacity(.5)),
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../../utils/my_size.dart';
-import '../../utils/app_colors/app_colors.dart';
+import '../../utils/app_colors.dart';
 
 class  CustomChips extends StatelessWidget {
   final String title;

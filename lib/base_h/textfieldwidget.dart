@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/app_colors/app_colors.dart';
+import '../utils/app_colors.dart';
 import '../utils/my_size.dart';
 
 class TextFieldWidget extends StatelessWidget {
@@ -26,7 +26,7 @@ class TextFieldWidget extends StatelessWidget {
               fontSize: MySize.size14,
               // fontWeight:fontWeight,
               // color: Color(0XFF47495B).withOpacity(.5),
-              color: Color(0XFFCCCFD4),
+              color: const Color(0XFFCCCFD4),
               height: height,
             ),
             suffixIcon: suffixicon,

@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
-import 'package:tresorly/utils/app_constants/app_constant.dart';
-import 'package:tresorly/views/auth_screens/signup_screen/signup_screen.dart';
-import '../../base/text_widget.dart';
-import '../../base_h/customAppBar.dart';
-import '../../utils/my_size.dart';
+import 'package:tresorly/base_h/customAppBar.dart';
+import 'package:tresorly/utils/app_constant.dart';
+import 'package:tresorly/utils/app_images.dart';
+import 'package:tresorly/utils/app_text.dart';
+import 'package:tresorly/utils/my_size.dart';
 
 class BillingHistory extends StatefulWidget {
   const BillingHistory({super.key});
@@ -51,34 +50,57 @@ class _BillingHistoryState extends State<BillingHistory> {
                 itemCount: 6,
                 itemBuilder: (context, index) => ListTile(
                       leading: Image.asset(
-                        AppConstants.upIcon,
+                        AppImages.upIcon,
                         scale: 3,
                       ),
                       trailing: const Text(
                         '- 24.50 CHF',
-                        style: TextStyle(fontSize: 14, color: Colors.red,   fontFamily: 'Outfit-Regular',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.red,
+                          fontFamily: 'Outfit-Regular',
                         ),
                       ),
-                      title: const Text('Yearly Subscription',  style: TextStyle(fontFamily: 'Outfit-Regular',fontSize: 18, fontWeight: FontWeight.w500 ),),
-                      subtitle:  Row(
+                      title: const Text(
+                        'Yearly Subscription',
+                        style: TextStyle(
+                            fontFamily: 'Outfit-Regular',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      subtitle: Row(
                         children: [
                           Image.asset(
                             color: Colors.black54,
-                            AppConstants.calendar2,
+                            AppImages.calendar2,
                             scale: 3,
                           ),
-                          5.wt,
-                          Text('12/2/2024', style: TextStyle(fontSize: 10, color: Colors.black54, fontFamily: 'Outfit-Regular',),),
-                          SizedBox(
+                          5.wd,
+                          const Text(
+                            '12/2/2024',
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.black54,
+                              fontFamily: 'Outfit-Regular',
+                            ),
+                          ),
+                          const SizedBox(
                             width: 20,
                           ),
                           Image.asset(
-                            color: Color(0XFF292D32),
-                            AppConstants.clockIcon,
+                            color: const Color(0XFF292D32),
+                            AppImages.clockIcon,
                             scale: 3,
                           ),
-                          5.wt,
-                          Text('07:21', style: TextStyle(fontSize: 11, color: Colors.black54, fontFamily: 'Outfit-Regular',),),
+                          5.wd,
+                          const Text(
+                            '07:21',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: Colors.black54,
+                              fontFamily: 'Outfit-Regular',
+                            ),
+                          ),
                         ],
                       ),
                     )),

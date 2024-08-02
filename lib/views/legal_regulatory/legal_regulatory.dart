@@ -1,10 +1,9 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:select2dot1/select2dot1.dart';
-import '../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../base_h/customAppBar.dart';
-import '../../utils/app_colors/app_colors.dart';
+import '../../utils/app_colors.dart';
 import '../../utils/my_size.dart';
 
 
@@ -35,7 +34,7 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
           ),
         ),
       ),
-      backgroundColor: Color(0XFFF0F4F7),
+      backgroundColor: const Color(0XFFF0F4F7),
       body:
       Padding(
         padding: const EdgeInsets.only(left: 40, right: 40, top: 20),
@@ -56,7 +55,7 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                     spreadRadius: 0,
                     blurRadius: 2
                 )],
-                borderRadius: BorderRadius.all(Radius.circular(8),
+                borderRadius: const BorderRadius.all(Radius.circular(8),
                 ),
                 color: AppColors.whiteColor,
               ),
@@ -70,8 +69,8 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                         padding: const EdgeInsets.only(left: 15),
                         child: TextWidgetInterBold(title: 'Terms of Service', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.blue8F),
                       ),
-                      Spacer(),
-                      Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
+                      const Spacer(),
+                      const Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
                     ],
                   )
                 ],
@@ -117,7 +116,7 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                     spreadRadius: 0,
                     blurRadius: 2
                   )],
-                borderRadius: BorderRadius.all(Radius.circular(8),
+                borderRadius: const BorderRadius.all(Radius.circular(8),
                 ),
                 color: AppColors.whiteColor,
               ),
@@ -131,8 +130,8 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                       padding: const EdgeInsets.only(left: 15),
                       child: TextWidgetInterBold(title: 'Privacy Policy', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.blue8F, ),
                     ),
-                    Spacer(),
-                    Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
+                    const Spacer(),
+                    const Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
                   ],
                 )
                 ],
@@ -147,7 +146,7 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                     spreadRadius: 0,
                     blurRadius: 2
                 )],
-                borderRadius: BorderRadius.all(Radius.circular(8),
+                borderRadius: const BorderRadius.all(Radius.circular(8),
                 ),
                 color: AppColors.whiteColor,
               ),
@@ -161,8 +160,8 @@ class _LegalRegulatoryScreenState extends State<LegalRegulatoryScreen> {
                         padding: const EdgeInsets.only(left: 15),
                         child: TextWidgetInterBold(title: 'Compliance Certifications', fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.blue8F),
                       ),
-                      Spacer(),
-                      Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
+                      const Spacer(),
+                      const Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
                     ],
                   )
                 ],

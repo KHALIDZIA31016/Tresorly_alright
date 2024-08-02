@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../../utils/my_size.dart';
-import '../../utils/app_colors/app_colors.dart';
+import '../../utils/app_colors.dart';
 
 class TextAndCheckBox extends StatefulWidget {
   final String image;
@@ -106,7 +106,7 @@ class _TextAndCheckBoxState extends State<TextAndCheckBox> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 52),
+              padding: const EdgeInsets.only(left: 52),
               child: TextWidgetInterBold(
                 title: widget.title3,
                 FontFamily: 'Outfit-Regular',

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tresorly/base/text_widget.dart';
+import 'package:tresorly/utils/app_text.dart';
+import 'package:tresorly/utils/app_images.dart';
 import '../../utils/my_size.dart';
 import '../base_h/customAppBar.dart';
 import '../menu/menu.dart';
-import '../utils/app_colors/app_colors.dart';
-import '../utils/app_constants/app_constant.dart';
+import '../utils/app_colors.dart';
 import 'base/editvaulttextfield.dart';
 
 class EditVault extends StatelessWidget {
@@ -48,7 +48,7 @@ class EditVault extends StatelessWidget {
                       color: AppColors.whiteFF,
                       shape: BoxShape.circle,
                     ) ,
-                    child: Image.asset(AppConstants.editLogo,height: 10,width: 15,),
+                    child: Image.asset(AppImages.editLogo,height: 10,width: 15,),
                   ),
                 ),
                 SizedBox(height: MySize.size10,),
@@ -145,7 +145,7 @@ class EditVault extends StatelessWidget {
                         EditVaultTextField(
                           hintText: 'https/www.dribbble.com',
                           fontWeight: FontWeight.w600,
-                          prefixIcon: AppConstants.globeLogo,
+                          prefixIcon: AppImages.globeLogo,
 
                         ),
                         SizedBox(height: MySize.size16,),
@@ -210,7 +210,7 @@ class EditVault extends StatelessWidget {
                           child: TextFormField(
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(top: 10),
-                              prefixIcon: AppConstants.lockLogo,
+                              prefixIcon: AppImages.lockLogo,
                               hintText: "● ● ● ● ● ● ● ●",
                               //height: 1,
                               hintStyle: TextStyle(
@@ -273,7 +273,7 @@ class EditVault extends StatelessWidget {
                         SizedBox(height: MySize.size4,),
                         EditVaultTextField(
                           hintText: 'Xa!15Lfm',
-                          prefixIcon: AppConstants.lockLogo,
+                          prefixIcon: AppImages.lockLogo,
                           suffixicon: Icons.copy_rounded,
                         ),
                         SizedBox(height: MySize.size12,),

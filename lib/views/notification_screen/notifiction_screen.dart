@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tresorly/utils/app_colors/app_colors.dart';
+import 'package:tresorly/utils/app_colors.dart';
 
-import '../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../base_h/customAppBar.dart';
 import '../../menu/menu.dart';
 import '../../utils/my_size.dart';
@@ -60,10 +60,10 @@ class _NotificationScreenState extends State<NotificationScreen> {
               itemCount: 3,
               itemBuilder: (context, index) => ListTile(
                 title: TextWidgetInterBold(
-                    title: '${switchTitle[index]}', fontSize: 14,
+                    title: switchTitle[index], fontSize: 14,
                     color: AppColors.blue8F,fontWeight: FontWeight.w400, FontFamily: 'Outfit-Regular'),
                 subtitle: TextWidgetInterBold(
-                    title: '${switch_subTitle[index]}', fontSize: 12,
+                    title: switch_subTitle[index], fontSize: 12,
                     color: AppColors.blue8F,fontWeight: FontWeight.w400, FontFamily: 'Outfit-Regular'),
                 trailing:   Switch(
                   value: val,
@@ -71,13 +71,13 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   => {setState(() {
                     val = !val;
                   })},
-                  activeColor: Color(0XFF168DBC),
-                  activeTrackColor: Color(0XFF168DBC),
+                  activeColor: const Color(0XFF168DBC),
+                  activeTrackColor: const Color(0XFF168DBC),
                   inactiveTrackColor: Colors.grey.withOpacity(.15),
                   thumbColor: val ? MaterialStateProperty.all(Colors.white54) : MaterialStateProperty.all(Colors.white12),
                 ),
               ),),
-           Spacer(),
+           const Spacer(),
             Padding(
               padding: const EdgeInsets.only( left: 8, top: 10, bottom: 30, ),
               child: GestureDetector(
@@ -91,9 +91,9 @@ class _NotificationScreenState extends State<NotificationScreen> {
                   height: 52, width: 355,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC).withOpacity(.6)])
+                      gradient: LinearGradient(colors: [const Color(0XFF165290), const Color(0XFF168DBC).withOpacity(.6)])
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text('Save Changes', style: TextStyle(
                         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white
                     ),),

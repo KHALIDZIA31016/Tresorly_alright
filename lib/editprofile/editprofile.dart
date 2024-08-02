@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tresorly/base/text_widget.dart';
+import 'package:tresorly/utils/app_text.dart';
 import '../../utils/my_size.dart';
 import '../base_h/customAppBar.dart';
 import '../base_h/textfieldcomponent.dart';
-import '../utils/app_colors/app_colors.dart';
-import '../utils/app_constants/app_constant.dart';
+import '../utils/app_colors.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({super.key});
@@ -43,7 +41,7 @@ class EditProfile extends StatelessWidget {
               fontSize: MySize.size14,
               fontWeight: FontWeight.w400,
               FontFamily: 'Outfit-Regular',
-              color: Color(0XFF17508F),
+              color: const Color(0XFF17508F),
             ),
             SizedBox(height: MySize.size5,),
             const TextFieldComponent(
@@ -85,9 +83,9 @@ class EditProfile extends StatelessWidget {
                 width: MySize.scaleFactorWidth*300,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: [Color(0xff165290) ,Color(0xff168DBC).withOpacity(.6) ],
-                    begin: Alignment(0, 7),
-                    end: Alignment(2, 0),
+                    colors: [const Color(0xff165290) ,const Color(0xff168DBC).withOpacity(.6) ],
+                    begin: const Alignment(0, 7),
+                    end: const Alignment(2, 0),
 
                   ),
                   borderRadius: BorderRadius.circular(MySize.size16),

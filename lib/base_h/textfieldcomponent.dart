@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/app_colors/app_colors.dart';
+import '../utils/app_colors.dart';
 import '../utils/my_size.dart';
 
 class TextFieldComponent extends StatelessWidget {
@@ -27,7 +27,7 @@ class TextFieldComponent extends StatelessWidget {
               fontWeight:fontWeight,
               fontFamily: 'Outfit-Regular',
               // color: AppColors.blue8F.withOpacity(.6),
-              color: Color(0XFF165290).withOpacity(.6),
+              color: const Color(0XFF165290).withOpacity(.6),
               height: height,
             ),
             suffixIcon: Icon(suffixicon,color: AppColors.blue8F.withOpacity(.6),size: MySize.size20,),

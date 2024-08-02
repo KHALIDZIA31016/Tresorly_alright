@@ -1,10 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:language_picker/language_picker_dropdown.dart';
-import 'package:language_picker/languages.dart';
-import 'package:tresorly/utils/app_colors/app_colors.dart';
+import 'package:tresorly/utils/app_colors.dart';
 
-import '../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../base_h/customAppBar.dart';
 import '../../utils/my_size.dart';
 
@@ -58,7 +55,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
            ),
            child: Center(
              child: ListTile(
-               title: Text('English (UK)', style: TextStyle(color: Colors.white),),
+               title: const Text('English (UK)', style: TextStyle(color: Colors.white),),
                leading: Image.asset('assets/icons/GB.png', scale: 3.5,),
                trailing: Text('(English)', style: TextStyle(color: Colors.white.withOpacity(.6)),),
              ),
@@ -70,7 +67,7 @@ class _LanguageSelectionState extends State<LanguageSelection> {
           leadingIcon: AssetImage('assets/icons/PS.png',),
           trailingText: '()',
         ),
-          SizedBox(height: 25,),
+          const SizedBox(height: 25,),
 
           Padding(
             padding: const EdgeInsets.only( top: 10, bottom: 30),
@@ -78,9 +75,9 @@ class _LanguageSelectionState extends State<LanguageSelection> {
               height: 52, width: 350,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(16),
-                  gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC)])
+                  gradient: const LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC)])
               ),
-              child: Center(
+              child: const Center(
                 child: Text('Save', style: TextStyle(
                     fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white
                 ),),
@@ -106,8 +103,8 @@ class LanguageTiles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> namingLists = ['English (UK)', 'Pakistan', 'Iran', 'English (UK)', 'Pakistan', 'English (UK)', 'Iran', 'English (UK)', 'English (UK)', 'English (UK)'];
-    List<String> namingLists_urdu = ['(English)', '(اردو)', '(فارسی)', 'English ', '(اردو)', 'English', '(فارسی)', 'English', 'English', 'English'];
-    List<AssetImage>  iconsList = [AssetImage('assets/icons/GB.png'),AssetImage('assets/icons/PK.png'), AssetImage('assets/icons/IR.png'), AssetImage('assets/icons/GB.png'), AssetImage('assets/icons/PK.png'), AssetImage('assets/icons/GB.png'), AssetImage('assets/icons/IR.png'), AssetImage('assets/icons/PS.png'), AssetImage('assets/icons/GB.png'), AssetImage('assets/icons/CN.png'), ];
+    List<String> naminglistsUrdu = ['(English)', '(اردو)', '(فارسی)', 'English ', '(اردو)', 'English', '(فارسی)', 'English', 'English', 'English'];
+    List<AssetImage>  iconsList = [const AssetImage('assets/icons/GB.png'),const AssetImage('assets/icons/PK.png'), const AssetImage('assets/icons/IR.png'), const AssetImage('assets/icons/GB.png'), const AssetImage('assets/icons/PK.png'), const AssetImage('assets/icons/GB.png'), const AssetImage('assets/icons/IR.png'), const AssetImage('assets/icons/PS.png'), const AssetImage('assets/icons/GB.png'), const AssetImage('assets/icons/CN.png'), ];
     return Expanded(
       child: ListView.builder(
         itemCount: namingLists.length,
@@ -116,9 +113,9 @@ class LanguageTiles extends StatelessWidget {
           padding: const EdgeInsets.only(left: 25, right: 25, top: 10),
           child: ListTile(
             tileColor: Colors.white,
-            title: Text('${namingLists[index]}'),
+            title: Text(namingLists[index]),
             leading:  Image(image: iconsList[index], height: 24, width: 24,),
-            trailing: Text('${namingLists_urdu[index]}'),
+            trailing: Text(naminglistsUrdu[index]),
           ),
         );
       },),

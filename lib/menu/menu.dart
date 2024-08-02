@@ -1,9 +1,7 @@
-// import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:tresorly/base/text_widget.dart';
+import 'package:tresorly/utils/app_text.dart';
+import 'package:tresorly/utils/app_images.dart';
 import 'package:tresorly/views/accessibility_screen/accessibility_screen.dart';
 import 'package:tresorly/views/biliing_history/billing_history.dart';
 import 'package:tresorly/views/language_selection/language_selection.dart';
@@ -18,8 +16,7 @@ import '../base_h/customAppBar.dart';
 import '../datamanagement/datamanagement.dart';
 import '../editprofile/editprofile.dart';
 import '../helpandsupport/helpandsupport.dart';
-import '../utils/app_colors/app_colors.dart';
-import '../utils/app_constants/app_constant.dart';
+import '../utils/app_colors.dart';
 import '../views/change_password/change_password.dart';
 import 'base/menurow.dart';
 import 'base/showdialog.dart';
@@ -32,7 +29,7 @@ class Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: AppColors.backgroundF7,
-      backgroundColor: Color(0XFFF0F4F7).withOpacity(.95),
+      backgroundColor: const Color(0XFFF0F4F7).withOpacity(.95),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(MySize.size72),
         child: Padding(
@@ -103,7 +100,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Edit Profile',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.editProfileLogo),
+                        image: const AssetImage(AppImages.editProfileLogo),
                       ),
                     ),
                     SizedBox(
@@ -119,7 +116,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Change Password',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.changePasswordLogo),
+                        image: const AssetImage(AppImages.changePasswordLogo),
                       ),
                     ),
                     SizedBox(
@@ -135,7 +132,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Authentication Options',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.authenticationLogo),
+                        image: const AssetImage(AppImages.authenticationLogo),
                       ),
                     ),
                     SizedBox(
@@ -160,7 +157,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Subscription Plans',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.moneyLogo),
+                        image: const AssetImage(AppImages.moneyLogo),
                       ),
                     ),
                     SizedBox(
@@ -176,7 +173,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Payment Methods',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.paymentLogo),
+                        image: const AssetImage(AppImages.paymentLogo),
                       ),
                     ),
                     SizedBox(
@@ -192,7 +189,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Billing History',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.historyLogo),
+                        image: const AssetImage(AppImages.historyLogo),
                       ),
                     ),
                     SizedBox(
@@ -217,7 +214,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Security & Privacy',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.securityLogo),
+                        image: const AssetImage(AppImages.securityLogo),
                       ),
                     ),
                     SizedBox(
@@ -233,7 +230,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Notifications',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.notificationLogo),
+                        image: const AssetImage(AppImages.notificationLogo),
                       ),
                     ),
                     SizedBox(
@@ -249,7 +246,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Language ',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.languageLogo),
+                        image: const AssetImage(AppImages.languageLogo),
                       ),
                     ),
                     SizedBox(
@@ -265,7 +262,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Data Management',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.dataLogo),
+                        image: const AssetImage(AppImages.dataLogo),
                       ),
                     ),
                     SizedBox(
@@ -281,7 +278,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Customization & Accessibility',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.customizationLogo),
+                        image: const AssetImage(AppImages.customizationLogo),
 
                       ),
                     ),
@@ -298,7 +295,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Help & Support',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.helpCenterLogo),
+                        image: const AssetImage(AppImages.helpCenterLogo),
                       ),
                     ),
                     SizedBox(
@@ -314,7 +311,7 @@ class Menu extends StatelessWidget {
                       child: MenuRow(
                         title: 'Legal and Regulatory',
                         color: AppColors.darkBlue46.withOpacity(.50),
-                        image: const AssetImage(AppConstants.legalLogo),
+                        image: const AssetImage(AppImages.legalLogo),
                       ),
                     ),
                     SizedBox(
@@ -334,7 +331,7 @@ class Menu extends StatelessWidget {
                     MenuRow(
                       title: 'Logout',
                       image: const AssetImage(
-                        AppConstants.logoutLogo,
+                        AppImages.logoutLogo,
                       ),
                       color2: AppColors.red1B,
                       color: AppColors.red1B.withOpacity(.5),
@@ -359,18 +356,18 @@ class Menu extends StatelessWidget {
                   SizedBox(
                     width: MySize.size12,
                   ),
-                  Image.asset(AppConstants.linkedinLogo),
+                  Image.asset(AppImages.linkedinLogo),
                   SizedBox(
                     width: MySize.size12,
                   ),
                   Image.asset(
-                    AppConstants.instaLogo,
+                    AppImages.instaLogo,
                   ),
                   SizedBox(
                     width: MySize.size12,
                   ),
                   Image.asset(
-                    AppConstants.twitterLogo,
+                    AppImages.twitterLogo,
                   ),
                 ],
               ),

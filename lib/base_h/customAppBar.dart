@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/app_colors/app_colors.dart';
+import '../utils/app_colors.dart';
 import '../utils/my_size.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -26,7 +26,7 @@ class CustomAppBar extends StatelessWidget {
           child:  Icon(icon, size: 20,),
         ),
       ),
-      title:  Text(text,style: TextStyle(color: AppColors.darkBlue46,fontSize: 20,fontWeight: FontWeight.w600, fontFamily: 'Outfit-Regular'),),
+      title:  Text(text,style: const TextStyle(color: AppColors.darkBlue46,fontSize: 20,fontWeight: FontWeight.w600, fontFamily: 'Outfit-Regular'),),
     );
   }
 }

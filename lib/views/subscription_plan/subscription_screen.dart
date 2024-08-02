@@ -1,5 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:tresorly/base/text_widget.dart';
+// import 'package:tresorly/base/app_text.dart';
 // import 'package:tresorly/utils/app_colors/app_colors.dart';
 //
 // import '../../base_h/customAppBar.dart';
@@ -285,8 +285,8 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:tresorly/base/text_widget.dart';
-import 'package:tresorly/utils/app_colors/app_colors.dart';
+import 'package:tresorly/utils/app_text.dart';
+import 'package:tresorly/utils/app_colors.dart';
 import '../../base_h/customAppBar.dart';
 import '../../utils/my_size.dart';
 import '../payment_method/payment_screen.dart';
@@ -353,7 +353,7 @@ class _SubscriptionPlanState extends State<SubscriptionPlan> {
                             title: '14 Days Free Trial',
                             fontSize: 8,
                             fontWeight: FontWeight.w500,
-                            color: Color(0XFFFFFFFF),
+                            color: const Color(0XFFFFFFFF),
                           ),
                         ),
                       ),
@@ -409,20 +409,20 @@ class _SubscriptionPlanState extends State<SubscriptionPlan> {
                       title: 'Priority Support',
                       imageIcon: 'assets/images/support.png',
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextWidgetInterBold(
                 title: 'Trial Period',
                 fontSize: 18,
                 fontWeight: FontWeight.w500,
                 color: AppColors.blue8F,
               ),
-              SizedBox(height: 15),
-              BulletPointText(),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
+              const BulletPointText(),
+              const SizedBox(height: 15),
               Center(
                 child: Container(
                   height: 245,
@@ -444,7 +444,7 @@ class _SubscriptionPlanState extends State<SubscriptionPlan> {
                           child: Container(
                             height: 25,
                             width: 120,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(5),
                                     topRight: Radius.circular(5)),
@@ -521,7 +521,7 @@ class _SubscriptionPlanState extends State<SubscriptionPlan> {
                           child: Container(
                             height: 25,
                             width: 120,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(10),
                                     bottomRight: Radius.circular(10)),
@@ -583,7 +583,7 @@ class _SubscriptionPlanState extends State<SubscriptionPlan> {
                                       title: 'Cancel Now  ',
                                       fontSize: 8,
                                       fontWeight: FontWeight.w400,
-                                      color: Color(0XFFF0F4F7),
+                                      color: const Color(0XFFF0F4F7),
                                     ),
                                   ),
                                   const Icon(Icons.arrow_forward,
@@ -622,8 +622,8 @@ class BulletPointText extends StatelessWidget {
   }
 
   Widget _buildBulletPoint(String text) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+    return const Padding(
+      padding: EdgeInsets.only(bottom: 8.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

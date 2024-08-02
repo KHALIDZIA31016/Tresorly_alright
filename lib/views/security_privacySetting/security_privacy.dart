@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tresorly/menu/menu.dart';
 
-import '../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../base_h/customAppBar.dart';
-import '../../utils/app_colors/app_colors.dart';
+import '../../utils/app_colors.dart';
 import '../../utils/my_size.dart';
 
 
@@ -57,32 +56,32 @@ class _SecurityAndPrivacySettingState extends State<SecurityAndPrivacySetting> {
                     FontFamily: 'Outfit-Regular',
                   color: const Color(0XFF1750BF),fontWeight: FontWeight.w500),
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.only(left: 15),
                 child: TextWidgetInterBold(
                   title: 'Length of Password', fontSize: 16,
                   color: const Color(0XFF1750BF),fontWeight: FontWeight.w400, FontFamily: 'Outfit-Regular',),
               ),
-              SizedBox(height: 8,),
+              const SizedBox(height: 8,),
               Slider(
                   min: 4, max: 10,
                   value: 8,
-                  activeColor: Color(0XFF168DBC),
+                  activeColor: const Color(0XFF168DBC),
                   thumbColor: Colors.white,
-                  inactiveColor: Color(0XFF168DBC).withOpacity(.5),
+                  inactiveColor: const Color(0XFF168DBC).withOpacity(.5),
                   onChanged: (value) => setState(() {
               })),
-              SizedBox(height: 8,),
+              const SizedBox(height: 8,),
               ListView.builder(
                 shrinkWrap: true,
                 itemCount: 4,
                 itemBuilder: (context, index) => ListTile(
                 title: TextWidgetInterBold(
-                    title: '${switchTitle[index]}', fontSize: 16,
+                    title: switchTitle[index], fontSize: 16,
                     color: const Color(0XFF1750BF),fontWeight: FontWeight.w400),
                 subtitle: TextWidgetInterBold(
-                    title: '${switch_subTitle[index]}', fontSize: 12,
+                    title: switch_subTitle[index], fontSize: 12,
                     color: const Color(0XFF1750BF),fontWeight: FontWeight.w400, FontFamily: 'Outfit-Regular',),
                 trailing:   Switch(
                   value: val,
@@ -90,8 +89,8 @@ class _SecurityAndPrivacySettingState extends State<SecurityAndPrivacySetting> {
                   => {setState(() {
                     val = !val;
                   })},
-                  activeColor: Color(0XFF168DBC),
-                  activeTrackColor: Color(0XFF168DBC),
+                  activeColor: const Color(0XFF168DBC),
+                  activeTrackColor: const Color(0XFF168DBC),
                   inactiveTrackColor: Colors.grey.withOpacity(.15),
                   thumbColor: val ? MaterialStateProperty.all(Colors.white54) : MaterialStateProperty.all(Colors.white12),
                 ),
@@ -119,9 +118,9 @@ class _SecurityAndPrivacySettingState extends State<SecurityAndPrivacySetting> {
                         spreadRadius: 0,
                         blurRadius: 2
                     )],
-                    borderRadius: BorderRadius.all(Radius.circular(8),
+                    borderRadius: const BorderRadius.all(Radius.circular(8),
                     ),
-                    color:Color(0XFFF0F4F7),
+                    color:const Color(0XFFF0F4F7),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,8 +132,8 @@ class _SecurityAndPrivacySettingState extends State<SecurityAndPrivacySetting> {
                             padding: const EdgeInsets.only(left: 15),
                             child: TextWidgetInterBold(title: 'Select Time ', fontSize: 14, fontWeight: FontWeight.w400, color: AppColors.blue8F, FontFamily: 'Outfit-Regular',),
                           ),
-                          Spacer(),
-                          Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
+                          const Spacer(),
+                          const Icon(Icons.expand_more, size: 35, color: AppColors.blue8F,)
                         ],
                       )
                     ],
@@ -161,8 +160,8 @@ class _SecurityAndPrivacySettingState extends State<SecurityAndPrivacySetting> {
                   => {setState(() {
                     val = !val;
                   })},
-                  activeColor: Color(0XFF168DBC),
-                  activeTrackColor: Color(0XFF168DBC),
+                  activeColor: const Color(0XFF168DBC),
+                  activeTrackColor: const Color(0XFF168DBC),
                   inactiveTrackColor: Colors.grey.withOpacity(.15),
                   thumbColor: val ? MaterialStateProperty.all(Colors.white54) : MaterialStateProperty.all(Colors.white12),
                 ),
@@ -181,9 +180,9 @@ class _SecurityAndPrivacySettingState extends State<SecurityAndPrivacySetting> {
                     height: 52, width: 350,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC).withOpacity(.6)])
+                        gradient: LinearGradient(colors: [const Color(0XFF165290), const Color(0XFF168DBC).withOpacity(.6)])
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text('Save Changes', style: TextStyle(
                           fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white, fontFamily: 'Outfit-Regular',
                       ),),

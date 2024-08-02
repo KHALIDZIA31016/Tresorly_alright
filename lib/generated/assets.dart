@@ -78,7 +78,7 @@ class Assets {
   static const String imagesAutoFill = 'assets/images/auto_fill.png';
   static const String imagesAutoPass = 'assets/images/auto_pass.png';
   static const String imagesBg = 'assets/background/images/bg.png';
-  static const String imagesBgImage = 'assets/background/images/bg_image.png';
+  static const String imagesBgImage = 'assets/background/images/smallBg.png';
   static const String imagesBgLines = 'assets/background/images/bg_lines.png';
   static const String imagesBin = 'assets/assets_h/images/bin.png';
   static const String imagesBreachAlert = 'assets/images/breach_alert.png';

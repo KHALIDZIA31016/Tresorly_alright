@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tresorly/base/text_widget.dart';
+import 'package:tresorly/utils/app_text.dart';
+import 'package:tresorly/utils/app_images.dart';
 import '../../utils/my_size.dart';
 import '../base_h/customAppBar.dart';
-import '../utils/app_colors/app_colors.dart';
-import '../utils/app_constants/app_constant.dart';
+import '../utils/app_colors.dart';
 import 'base/containercomponent.dart';
 
 class DataManagement extends StatefulWidget {
@@ -87,7 +87,7 @@ class _DataManagementState extends State<DataManagement> {
                     color: AppColors.blue8F,
                   ),
                 ),
- Spacer(),
+ const Spacer(),
                 Padding(
                   padding:  EdgeInsets.symmetric(horizontal: MySize.size6,),
                   child: SizedBox(
@@ -116,12 +116,12 @@ class _DataManagementState extends State<DataManagement> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const ContainerComponent(
-                  image: AppConstants.importLogo,
+                  image: AppImages.importLogo,
                   title: 'Import Data',
                 ),
                 SizedBox(width: MySize.size6,),
                 const ContainerComponent(
-                  image: AppConstants.exportLogo,
+                  image: AppImages.exportLogo,
                   title: 'Export Data',
                 ),
               ],
@@ -138,7 +138,7 @@ class _DataManagementState extends State<DataManagement> {
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                AppConstants.binLogo,
+                AppImages.binLogo,
                 SizedBox(width: MySize.size4,),
                 TextWidgetInterBold(
                   title: 'Delete Data',

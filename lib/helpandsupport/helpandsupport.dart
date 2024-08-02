@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../base/text_widget.dart';
+import '../utils/app_text.dart';
 import '../../utils/my_size.dart';
 import '../base_h/customAppBar.dart';
-import '../utils/app_colors/app_colors.dart';
+import '../utils/app_colors.dart';
 import 'base/formfieldcomponent.dart';
 class HelpAndSupport extends StatelessWidget {
   const HelpAndSupport({super.key});
@@ -68,7 +67,7 @@ class HelpAndSupport extends StatelessWidget {
                     fontSize: MySize.size14,
                     fontWeight: FontWeight.w400,
                   ),
-                  SizedBox(width: 15,),
+                  const SizedBox(width: 15,),
                   DropdownButton<String>(
                     icon:Icon(
                       Icons.expand_more_outlined,

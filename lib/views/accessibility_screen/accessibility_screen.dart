@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tresorly/menu/menu.dart';
-import '../../base/text_widget.dart';
+import '../../utils/app_text.dart';
 import '../../base_h/customAppBar.dart';
-import '../../utils/app_colors/app_colors.dart';
+import '../../utils/app_colors.dart';
 import '../../utils/my_size.dart';
 
 
@@ -40,7 +40,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
           ),
         ),
       ),
-      backgroundColor: Color(0XFFF0F4F7),
+      backgroundColor: const Color(0XFFF0F4F7),
       body:
       Padding(
         padding: const EdgeInsets.only(left: 35, right: 35, top: 20),
@@ -50,7 +50,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
             TextWidgetInterBold(
                 title: 'Customization and Accessibility', fontSize: 18,
                 color: const Color(0XFF17508F),fontWeight: FontWeight.w500, FontFamily: 'Outfit-Regular'),
-        SizedBox(height: 20,),
+        const SizedBox(height: 20,),
         Row(
           children: [
            Column(
@@ -64,7 +64,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                    color: AppColors.blue8F,fontWeight: FontWeight.w400),
              ],
            ),
-            Spacer(),
+            const Spacer(),
             Column(
               children: [
                 Switch(
@@ -73,8 +73,8 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                   => {setState(() {
                     val = !val;
                   })},
-                  activeColor: Color(0XFF168DBC),
-                  activeTrackColor: Color(0XFF168DBC),
+                  activeColor: const Color(0XFF168DBC),
+                  activeTrackColor: const Color(0XFF168DBC),
                   inactiveTrackColor: Colors.grey.withOpacity(.15),
                   thumbColor: val ? MaterialStateProperty.all(Colors.white54) : MaterialStateProperty.all(Colors.white12),
                 ),
@@ -85,11 +85,11 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
             )
           ],
         ),
-            SizedBox(height: 16,),
+            const SizedBox(height: 16,),
             TextWidgetInterBold(
                 title: 'Font Size', fontSize: 18,
                 color: AppColors.blue8F,fontWeight: FontWeight.w400),
-            SizedBox(height: 18,),
+            const SizedBox(height: 18,),
             // ListView.builder(
             //   shrinkWrap: true,
             //   itemCount: 3,
@@ -118,13 +118,13 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                       leading: Icon(
                         isSelected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
                         size: 24,
-                        color: isSelected ? Color(0XFF168DBC) : Color(0XFF168DBC).withOpacity(.5),
+                        color: isSelected ? const Color(0XFF168DBC) : const Color(0XFF168DBC).withOpacity(.5),
                       ),
                       title: TextWidgetInterBold(
                           title: 'aAbBcC', fontSize: fontSize_Title[index],
                           color: AppColors.black40,fontWeight: FontWeight.w400),
                       subtitle: TextWidgetInterBold(
-                          title: '${switch_subTitle[index]}', fontSize: 10,
+                          title: switch_subTitle[index], fontSize: 10,
                           color: AppColors.black40,fontWeight: FontWeight.w400),
 
                     ),
@@ -133,7 +133,7 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
               ),
             ),
 
-               Spacer(),
+               const Spacer(),
             Padding(
               padding: const EdgeInsets.only( left: 10, top: 10, bottom: 30, ),
               child: InkWell(
@@ -148,9 +148,9 @@ class _AccessibilityScreenState extends State<AccessibilityScreen> {
                   height: 52, width: 355,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      gradient: LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC)])
+                      gradient: const LinearGradient(colors: [Color(0XFF165290), Color(0XFF168DBC)])
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text('Save Changes', style: TextStyle(
                         fontSize: 14, fontWeight: FontWeight.w600, color: Colors.white
                     ),),

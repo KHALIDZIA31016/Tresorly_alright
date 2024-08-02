@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/app_colors/app_colors.dart';
+import '../utils/app_colors.dart';
 import '../utils/my_size.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -13,7 +13,7 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: AppColors.whiteFF.withOpacity(0.10),
-          contentPadding: EdgeInsets.all(12),
+          contentPadding: const EdgeInsets.all(12),
           suffixIcon: Icon(icon,
               color: AppColors.greyF7.withOpacity(0.5)),
           hintText: hintText,

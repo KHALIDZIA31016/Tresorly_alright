@@ -1,17 +1,11 @@
-import 'dart:collection';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:tresorly/base/text_widget.dart';
-import 'package:tresorly/utils/app_constants/app_constant.dart';
+import 'package:tresorly/utils/app_text.dart';
+import 'package:tresorly/base_h/customAppBar.dart';
+import 'package:tresorly/menu/menu.dart';
+import 'package:tresorly/utils/app_colors.dart';
+import 'package:tresorly/utils/app_images.dart';
+import 'package:tresorly/utils/my_size.dart';
 import 'package:tresorly/views/add_card/Add_card.dart';
-
-import '../../base_h/customAppBar.dart';
-import '../../menu/menu.dart';
-import '../../utils/app_colors/app_colors.dart';
-import '../../utils/my_size.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -24,9 +18,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   List<String> titleContainer = ['Credit Card', 'Debit Card', 'Pay Pal'];
   List<String> containerImages= [
-    AppConstants.credit_cardIcon,
-    AppConstants.debit_cardIcon,
-    AppConstants.paypalIcon
+    AppImages.credit_cardIcon,
+    AppImages.debit_cardIcon,
+    AppImages.paypalIcon
   ];
 
   int selectedIndex = -1;
@@ -69,82 +63,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            // SingleChildScrollView(
-            //  scrollDirection: Axis.horizontal,
-            //   child: Row(
-            //     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //     children: [
-            //       InkWell(
-            //         onTap: (){
-            //           setState(() {
-            //             tap = ! tap;
-            //           });
-            //         },
-            //         child: Container(
-            //           height: 110, width: 124,
-            //           decoration: BoxDecoration(
-            //               color: tap ? Color(0XFF17508F) : AppColors.whiteColor,
-            //               borderRadius: BorderRadius.all(Radius.circular(20)),
-            //           ),
-            //           child: Column(
-            //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //             children: [
-            //               Image.asset(AppConstants.debit_cardIcon, height: 50, width: 75, color: tap ? AppColors.whiteColor :  Color(0XFF17508F),),
-            //               TextWidgetInterRegular(title: 'Credit Card', fontSize: 12, fontWeight: FontWeight.w500, color: tap ? AppColors.whiteColor :  Color(0XFF17508F))
-            //             ],
-            //           ),
-            //         ),
-            //       ),
-            //       const SizedBox(width: 15,),
-            //       InkWell(
-            //         onTap: (){
-            //           setState(() {
-            //             tap1 = ! tap1;
-            //           });
-            //         },
-            //         child: Container(
-            //           height: 110, width: 124,
-            //           decoration: BoxDecoration(
-            //             color: tap1 ? Color(0XFF17508F) : AppColors.whiteColor,
-            //             borderRadius: const BorderRadius.all(Radius.circular(20)),
-            //           ),
-            //           child: Column(
-            //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //             children: [
-            //               Image.asset(AppConstants.credit_cardIcon, height: 50, width: 75,color: tap1 ? AppColors.whiteColor :  Color(0XFF17508F),),
-            //               TextWidgetInterRegular(title: 'Debit Card', fontSize: 12, fontWeight: FontWeight.w500,
-            //                   color: tap1 ? AppColors.whiteColor :  Color(0XFF17508F))
-            //             ],
-            //           ),
-            //         ),
-            //       ),
-            //       const SizedBox(width: 15,),
-            //       InkWell(
-            //         onTap: (){
-            //           setState(() {
-            //             tap2 = ! tap2;
-            //           });
-            //         },
-            //         child: Container(
-            //           height: 110, width: 124,
-            //           decoration: BoxDecoration(
-            //             color: tap2 ? Color(0XFF17508F) : AppColors.whiteColor,
-            //             borderRadius: const BorderRadius.all(Radius.circular(20)),
-            //           ),
-            //           child: Column(
-            //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //             children: [
-            //               Image.asset(AppConstants.paypalIcon, height: 50, width: 75,color: tap2 ? AppColors.whiteColor :  Color(0XFF17508F),),
-            //               TextWidgetInterRegular(
-            //                   title: 'Pay pal', fontSize: 12, fontWeight: FontWeight.w500, color: tap2 ? AppColors.whiteColor :  Color(0XFF17508F))
-            //             ],
-            //           ),
-            //         ),
-            //       ),
-            //       const SizedBox(width: 15,),
-            //     ],
-            //   ),
-            // ),
       Expanded(
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
@@ -167,8 +85,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                         height: 124,
                         width: 110,
                         decoration: BoxDecoration(
-                          color: isSelected ? Color(0XFF17508F) : AppColors.whiteColor,
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          color: isSelected ? const Color(0XFF17508F) : AppColors.whiteColor,
+                          borderRadius: const BorderRadius.all(Radius.circular(20)),
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -177,27 +95,27 @@ class _PaymentScreenState extends State<PaymentScreen> {
                               containerImages[index],
                               height: 50,
                               width: 75,
-                              color: isSelected ? AppColors.whiteColor : Color(0XFF17508F),
+                              color: isSelected ? AppColors.whiteColor : const Color(0XFF17508F),
                             ),
                             TextWidgetInterRegular(
                               title: titleContainer[index],
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               FontFamily: 'Outfit-Regular',
-                              color: isSelected ? AppColors.whiteColor : Color(0XFF17508F),
+                              color: isSelected ? AppColors.whiteColor : const Color(0XFF17508F),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    const SizedBox(height: 15),
                     Stack(
                       alignment: Alignment.center,
                       children: [
                         Container(
                           height: 28,
                           width: 28,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                             border: Border.fromBorderSide(BorderSide(color: AppColors.balck, width: 1)),
                             shape: BoxShape.circle,
@@ -207,7 +125,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           height: 12,
                           width: 12,
                           decoration: BoxDecoration(
-                            color: isSelected ? Color(0XFF505050) : Colors.transparent,
+                            color: isSelected ? const Color(0XFF505050) : Colors.transparent,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -394,9 +312,9 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   width: 350,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                           colors: [Color(0XFF165290), Color(0XFF168DBC)])),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       'Checkout',
                       style: TextStyle(

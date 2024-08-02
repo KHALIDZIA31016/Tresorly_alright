@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Test extends StatefulWidget {
-  const Test({Key? key}) : super(key: key);
+  const Test({super.key});
 
   @override
   State<Test> createState() => _TestState();
@@ -23,7 +23,7 @@ class _TestState extends State<Test> {
                   height: 120,
                   width: 200,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
+                    borderRadius: const BorderRadius.all(Radius.circular(20)),
                     color: selectedList[index] == index ? Colors.blue : Colors.white,
                   ),
                 ),
